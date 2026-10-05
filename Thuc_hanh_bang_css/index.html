@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Bảng trong CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Thực Hành Định Kiểu Bảng Bằng CSS</h1>
+
+        <!-- 1. Đường viền của bảng -->
+        <div class="card">
+            <h2>1. Đường viền bảng (border: 1px solid black)</h2>
+            <p class="desc">Bảng có đường viền kép vì cả table, th và td đều có viền riêng biệt.</p>
+            <table class="table-bordered">
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Tuổi</th>
+                    <th>Lớp</th>
+                </tr>
+                <tr>
+                    <td>Nguyễn Văn A</td>
+                    <td>20</td>
+                    <td>Web</td>
+                </tr>
+                <tr>
+                    <td>Trần Thị B</td>
+                    <td>21</td>
+                    <td>Web</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 2. Gộp viền với border-collapse -->
+        <div class="card">
+            <h2>2. Gộp đường viền (border-collapse: collapse)</h2>
+            <p class="desc">Gộp các đường viền liền kề thành một đường viền đơn gọn gàng.</p>
+            <table class="table-collapsed">
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Tuổi</th>
+                    <th>Lớp</th>
+                </tr>
+                <tr>
+                    <td>Nguyễn Văn A</td>
+                    <td>20</td>
+                    <td>Web</td>
+                </tr>
+                <tr>
+                    <td>Trần Thị B</td>
+                    <td>21</td>
+                    <td>Web</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 3. Căn chỉnh vị trí nội dung: text-align & vertical-align -->
+        <div class="card">
+            <h2>3. Căn chỉnh chiều ngang và chiều dọc (text-align & vertical-align)</h2>
+            <p class="desc">Tiêu đề căn trái (text-align: left, height: 50px). Ô dữ liệu căn xuống dưới (vertical-align: bottom, height: 70px).</p>
+            <table class="table-align">
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Tuổi</th>
+                    <th>Lớp</th>
+                </tr>
+                <tr>
+                    <td>Nguyễn Văn A</td>
+                    <td>20</td>
+                    <td>Web</td>
+                </tr>
+                <tr>
+                    <td>Trần Thị B</td>
+                    <td>21</td>
+                    <td>Web</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 4. Màu sắc, padding và bố cục hoàn thiện -->
+        <div class="card">
+            <h2>4. Bảng hoàn thiện với màu sắc, padding và hiệu ứng hover</h2>
+            <p class="desc">Sử dụng padding: 15px, background-color, color, xen kẽ dòng chẵn/lẻ (zebra striping).</p>
+            <table class="table-styled">
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Tuổi</th>
+                    <th>Lớp</th>
+                </tr>
+                <tr>
+                    <td>Nguyễn Văn A</td>
+                    <td>20</td>
+                    <td>Web</td>
+                </tr>
+                <tr>
+                    <td>Trần Thị B</td>
+                    <td>21</td>
+                    <td>Web</td>
+                </tr>
+                <tr>
+                    <td>Lê Văn C</td>
+                    <td>22</td>
+                    <td>Web</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

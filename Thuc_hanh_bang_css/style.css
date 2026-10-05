@@ -1,0 +1,115 @@
+/* Base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f7fafc;
+    color: #2d3748;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+h1.main-title {
+    text-align: center;
+    color: #2b6cb0;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.card p.desc {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* 1. Bảng có viền kép (mặc định không có border-collapse) */
+table.table-bordered {
+    border: 1px solid black;
+    width: 100%;
+}
+table.table-bordered th,
+table.table-bordered td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* 2. Bảng gộp viền đơn với border-collapse: collapse */
+table.table-collapsed {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+table.table-collapsed th,
+table.table-collapsed td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* 3. Căn chỉnh text-align & vertical-align */
+table.table-align {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #4a5568;
+}
+table.table-align th {
+    border: 1px solid #4a5568;
+    text-align: left;
+    height: 50px;
+    padding: 10px;
+    background-color: #e2e8f0;
+}
+table.table-align td {
+    border: 1px solid #4a5568;
+    height: 70px;
+    vertical-align: bottom;
+    padding: 10px;
+}
+
+/* 4. Bảng hoàn thiện: Màu sắc, padding, hover effect */
+table.table-styled {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #cbd5e0;
+}
+table.table-styled th {
+    background-color: #333333;
+    color: #ffffff;
+    height: 50px;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+table.table-styled td {
+    background-color: #f7fafc;
+    color: #333333;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    transition: background-color 0.2s;
+}
+table.table-styled tr:nth-child(even) td {
+    background-color: #edf2f7;
+}
+table.table-styled tr:hover td {
+    background-color: #e2e8f0;
+}
