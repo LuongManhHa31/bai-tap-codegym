@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+        }
+        body {
+            background-color: #eef2f5;
+            padding: 30px 15px;
+            color: #333;
+        }
+        .survey-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-top: 6px solid #4390df;
+        }
+        .header {
+            padding: 25px 30px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fbfbfb;
+        }
+        .header h2 {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+        form {
+            padding: 25px 30px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        label.question-title {
+            display: block;
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 50%;
+            min-width: 220px;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            outline: none;
+        }
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .other-input {
+            margin-left: 10px;
+            padding: 4px 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .price-inputs {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+        }
+        .price-inputs input {
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+        .price-sublabel {
+            display: block;
+            font-size: 11px;
+            color: #888;
+            margin-top: 3px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            resize: vertical;
+        }
+        /* Likert table */
+        table.likert-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        table.likert-table th, table.likert-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #e1e1e1;
+        }
+        table.likert-table th.statement-header {
+            text-align: left;
+            width: 45%;
+            font-weight: normal;
+        }
+        table.likert-table thead th {
+            background-color: #f7f9fa;
+            font-weight: bold;
+            color: #444;
+        }
+        table.likert-table tbody tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+        table.likert-table tbody tr:hover {
+            background-color: #f0f7ff;
+        }
+        .submit-container {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .submit-btn {
+            background-color: #4390df;
+            color: white;
+            border: none;
+            padding: 11px 28px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #2b78c9;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <div class="header">
+            <h2>Market Research Survey</h2>
+            <p>Please take a few moments to complete this satisfaction survey.</p>
+        </div>
+
+        <form action="#" method="POST">
+            <!-- Câu 1: Age range -->
+            <div class="form-group">
+                <label class="question-title" for="age">What is your age range?</label>
+                <select id="age" name="age">
+                    <option value="18-24">18-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-50">35-50</option>
+                    <option value="50+">50+</option>
+                </select>
+            </div>
+
+            <!-- Câu 2: Yearly income -->
+            <div class="form-group">
+                <label class="question-title" for="income">What is your yearly income range?</label>
+                <select id="income" name="income">
+                    <option value="$0 - $25,000">$0 - $25,000</option>
+                    <option value="$25,001 - $50,000">$25,001 - $50,000</option>
+                    <option value="$50,001 - $100,000">$50,001 - $100,000</option>
+                    <option value="$100,000+">$100,000+</option>
+                </select>
+            </div>
+
+            <!-- Câu 3: Gender Identity -->
+            <div class="form-group">
+                <label class="question-title">Gender Identity</label>
+                <div class="options-list">
+                    <label class="option-item"><input type="radio" name="gender" value="Male"> Male</label>
+                    <label class="option-item"><input type="radio" name="gender" value="Female"> Female</label>
+                    <label class="option-item"><input type="radio" name="gender" value="Nonbinary"> Nonbinary</label>
+                    <label class="option-item">
+                        <input type="radio" name="gender" value="Other"> Other
+                        <input type="text" name="gender_other" class="other-input" placeholder="Please specify">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Câu 4: Products purchased -->
+            <div class="form-group">
+                <label class="question-title">Which of the following products have you purchased in the last 2 months. Please check all that apply.</label>
+                <div class="options-list">
+                    <label class="option-item"><input type="checkbox" name="product" value="Product 1"> Product 1</label>
+                    <label class="option-item"><input type="checkbox" name="product" value="Product 2"> Product 2</label>
+                    <label class="option-item"><input type="checkbox" name="product" value="Product 3"> Product 3</label>
+                </div>
+            </div>
+
+            <!-- Câu 5: Frequency -->
+            <div class="form-group">
+                <label class="question-title">How often would you use our new product?</label>
+                <div class="options-list">
+                    <label class="option-item"><input type="radio" name="frequency" value="Daily"> Daily</label>
+                    <label class="option-item"><input type="radio" name="frequency" value="Weekly"> Weekly</label>
+                    <label class="option-item"><input type="radio" name="frequency" value="Monthly"> Monthly</label>
+                </div>
+            </div>
+
+            <!-- Câu 6: Price -->
+            <div class="form-group">
+                <label class="question-title">What would you pay for the new product?</label>
+                <div class="price-inputs">
+                    <span>$</span>
+                    <div>
+                        <input type="text" name="price_dollars" size="8" placeholder="0">
+                        <span class="price-sublabel">Dollars</span>
+                    </div>
+                    <span>.</span>
+                    <div>
+                        <input type="text" name="price_cents" size="3" maxlength="2" placeholder="00">
+                        <span class="price-sublabel">Cents</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Câu 7: Features textarea -->
+            <div class="form-group">
+                <label class="question-title" for="features">What features would you like to see in the new product.</label>
+                <textarea id="features" name="features" placeholder="Your feedback..."></textarea>
+            </div>
+
+            <!-- Câu 8: Likert Scale Table -->
+            <div class="form-group">
+                <label class="question-title">Please rate your level of agreement with the following statements.</label>
+                <table class="likert-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Strongly Disagree</th>
+                            <th>Disagree</th>
+                            <th>Agree</th>
+                            <th>Strongly Agree</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="statement-header">Our products are priced fairly.</th>
+                            <td><input type="radio" name="rate_price" value="1"></td>
+                            <td><input type="radio" name="rate_price" value="2"></td>
+                            <td><input type="radio" name="rate_price" value="3"></td>
+                            <td><input type="radio" name="rate_price" value="4"></td>
+                        </tr>
+                        <tr>
+                            <th class="statement-header">Our products are high quality.</th>
+                            <td><input type="radio" name="rate_quality" value="1"></td>
+                            <td><input type="radio" name="rate_quality" value="2"></td>
+                            <td><input type="radio" name="rate_quality" value="3"></td>
+                            <td><input type="radio" name="rate_quality" value="4"></td>
+                        </tr>
+                        <tr>
+                            <th class="statement-header">You would recommend our product to a friend or coworker.</th>
+                            <td><input type="radio" name="rate_recommend" value="1"></td>
+                            <td><input type="radio" name="rate_recommend" value="2"></td>
+                            <td><input type="radio" name="rate_recommend" value="3"></td>
+                            <td><input type="radio" name="rate_recommend" value="4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Submit button -->
+            <div class="submit-container">
+                <input type="submit" value="Submit" class="submit-btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
