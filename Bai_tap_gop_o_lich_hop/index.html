@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch họp công ty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px 16px;
+            text-align: center;
+        }
+        th {
+            background-color: #1e3a8a;
+            color: white;
+            font-weight: 600;
+        }
+        td.content {
+            text-align: left;
+        }
+        .day-cell {
+            background-color: #f8fafc;
+            font-weight: bold;
+            color: #1e40af;
+        }
+        .special-event {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            font-weight: bold;
+            text-align: center;
+        }
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lịch họp công ty</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Ngày</th>
+                    <th>Giờ</th>
+                    <th>Nội dung cuộc họp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Thứ Hai: Dùng rowspan="2" để gộp 2 cuộc họp trong cùng ngày -->
+                <tr>
+                    <td rowspan="2" class="day-cell">Thứ Hai<br>(12/10)</td>
+                    <td>08:30 - 10:00</td>
+                    <td class="content">Họp giao ban đầu tuần toàn thể phòng Kỹ thuật</td>
+                </tr>
+                <tr>
+                    <td>14:00 - 16:30</td>
+                    <td class="content">Họp đánh giá tiến độ phát triển dự án Web Frontend</td>
+                </tr>
+
+                <!-- Thứ Tư: Dùng rowspan="2" để gộp 2 cuộc họp trong cùng ngày -->
+                <tr>
+                    <td rowspan="2" class="day-cell">Thứ Tư<br>(14/10)</td>
+                    <td>09:00 - 11:30</td>
+                    <td class="content">Phỏng vấn ứng viên lập trình viên mới</td>
+                </tr>
+                <tr>
+                    <td>15:00 - 17:00</td>
+                    <td class="content">Họp trực tuyến với đối tác và khách hàng chiến lược</td>
+                </tr>
+
+                <!-- Thứ Sáu: Dùng colspan="2" cho sự kiện kéo dài cả ngày -->
+                <tr>
+                    <td class="day-cell">Thứ Sáu<br>(16/10)</td>
+                    <td colspan="2" class="special-event">08:00 - 17:00: Hội nghị tổng kết kế hoạch quý và định hướng phát triển toàn công ty (Cả ngày)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
