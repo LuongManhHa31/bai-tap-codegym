@@ -1,0 +1,95 @@
+/* Thiết lập cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* 1. Thiết lập màu nền (background-color) cho trang web */
+body {
+    background-color: #e2e8f0; /* Màu nền xám xanh hiện đại */
+    color: #1e293b;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Tiêu đề chính */
+h1 {
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+/* Đoạn văn mô tả */
+p.description {
+    font-size: 17px;
+    color: #475569;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+/* 2. Khối div có ảnh nền (background-image) và căn giữa nội dung */
+.hero-banner {
+    /* Ảnh nền với lớp phủ gradient tối nhẹ giúp chữ màu trắng nổi bật rõ ràng */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), 
+                      url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Kích thước & bo góc */
+    min-height: 380px;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    /* 3. Căn giữa nội dung trong khối div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-banner h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-banner p {
+    color: #f1f5f9;
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    transition: all 0.25s ease;
+}
+
+.hero-btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+}
