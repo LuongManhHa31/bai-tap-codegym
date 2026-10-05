@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Danh sách trong CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Thực Hành Định Kiểu Danh Sách Bằng CSS</h1>
+
+        <!-- 2. Kiểu đánh dấu vuông: square -->
+        <div class="card">
+            <h2>2. Kiểu đánh dấu hình vuông (list-style-type: square)</h2>
+            <ul class="square-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+            </ul>
+        </div>
+
+        <!-- 3. Kiểu đánh dấu số La Mã: upper-roman -->
+        <div class="card">
+            <h2>3. Danh sách có thứ tự số La Mã (list-style-type: upper-roman)</h2>
+            <ol class="roman-list">
+                <li>Học HTML</li>
+                <li>Học CSS</li>
+                <li>Học JavaScript</li>
+                <li>Học Git</li>
+            </ol>
+        </div>
+
+        <!-- 4. Sử dụng hình ảnh làm dấu đánh dấu (list-style-image) -->
+        <div class="card">
+            <h2>4. Dùng hình ảnh biểu tượng làm dấu đánh dấu (list-style-image)</h2>
+            <ul class="image-list">
+                <li>Visual Studio Code</li>
+                <li>Google Chrome</li>
+                <li>GitHub</li>
+                <li>Git</li>
+            </ul>
+        </div>
+
+        <!-- 5. Thay đổi vị trí: outside vs inside -->
+        <div class="card">
+            <h2>5. Vị trí dấu đánh dấu (list-style-position: outside vs inside)</h2>
+            <div class="position-demo">
+                <div class="position-box">
+                    <h3>list-style-position: outside (Dấu nằm ngoài khối)</h3>
+                    <ul class="list-outside">
+                        <li>Mục thứ nhất</li>
+                        <li>Mục thứ hai</li>
+                        <li>Mục thứ ba</li>
+                    </ul>
+                </div>
+                <div class="position-box">
+                    <h3>list-style-position: inside (Dấu nằm trong khối)</h3>
+                    <ul class="list-inside">
+                        <li>Mục thứ nhất</li>
+                        <li>Mục thứ hai</li>
+                        <li>Mục thứ ba</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Thuộc tính rút gọn list-style -->
+        <div class="card">
+            <h2>6. Thuộc tính rút gọn (list-style: square inside)</h2>
+            <ul class="shorthand-list">
+                <li>Thiết lập nhanh kiểu đánh dấu</li>
+                <li>Kết hợp vị trí và kiểu dấu cùng lúc</li>
+                <li>Mã nguồn ngắn gọn, tối ưu</li>
+            </ul>
+        </div>
+
+        <!-- 7. Định kiểu màu sắc, khoảng cách padding & margin -->
+        <div class="card">
+            <h2>7. Danh sách với màu sắc và khoảng cách (padding, margin, background)</h2>
+            <ul class="styled-color-list">
+                <li>HTML - Ngôn ngữ đánh dấu siêu văn bản</li>
+                <li>CSS - Ngôn ngữ định kiểu giao diện web</li>
+                <li>JavaScript - Ngôn ngữ lập trình logic tương tác</li>
+                <li>Python - Ngôn ngữ lập trình ứng dụng đa năng</li>
+            </ul>
+        </div>
+
+        <!-- 8. Bài tập tổng hợp -->
+        <div class="card roadmap-card">
+            <h2>8. Bài tập tổng hợp: Lộ trình học lập trình Web</h2>
+            <ul class="roadmap-list">
+                <li>HTML - Nền tảng cấu trúc website</li>
+                <li>CSS - Thiết kế bố cục và màu sắc giao diện</li>
+                <li>JavaScript - Lập trình tính năng tương tác người dùng</li>
+                <li>Git - Quản lý phiên bản mã nguồn</li>
+                <li>GitHub - Lưu trữ và cộng tác dự án từ xa</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

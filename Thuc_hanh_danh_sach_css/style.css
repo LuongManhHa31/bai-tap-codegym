@@ -1,0 +1,158 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #2d3748;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+h1.main-title {
+    text-align: center;
+    color: #2b6cb0;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #3182ce;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #cbd5e0;
+    padding-bottom: 8px;
+}
+
+/* 2. Thay đổi kiểu đánh dấu danh sách không thứ tự: square */
+ul.square-list {
+    list-style-type: square;
+    padding-left: 25px;
+}
+ul.square-list li {
+    padding: 4px 0;
+}
+
+/* 3. Danh sách có thứ tự số La Mã: upper-roman */
+ol.roman-list {
+    list-style-type: upper-roman;
+    padding-left: 25px;
+}
+ol.roman-list li {
+    padding: 4px 0;
+}
+
+/* 4. Dùng hình ảnh làm dấu đánh dấu (list-style-image) */
+ul.image-list {
+    /* Sử dụng SVG icon ngôi sao vàng làm bullet */
+    list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23f59e0b"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.399 8.166-7.333-3.856-7.333 3.856 1.399-8.166-5.934-5.784 8.2-1.192zm0 5.702l-2.223 4.504-4.969.722 3.596 3.505-.848 4.949 4.444-2.336 4.444 2.336-.848-4.949 3.596-3.505-4.969-.722z"/></svg>');
+    padding-left: 25px;
+}
+ul.image-list li {
+    padding: 4px 0;
+}
+
+/* 5. Vị trí dấu đánh dấu: outside vs inside */
+.position-demo {
+    display: flex;
+    gap: 20px;
+}
+.position-box {
+    flex: 1;
+    background: #edf2f7;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+.position-box h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #4a5568;
+}
+ul.list-outside {
+    list-style-position: outside;
+    background: #fed7d7;
+    padding: 10px 10px 10px 30px;
+    border: 1px dashed #e53e3e;
+}
+ul.list-inside {
+    list-style-position: inside;
+    background: #c6f6d5;
+    padding: 10px;
+    border: 1px dashed #38a169;
+}
+
+/* 6. Thuộc tính rút gọn list-style */
+ul.shorthand-list {
+    list-style: square inside;
+    background-color: #f7fafc;
+    padding: 12px;
+    border-radius: 6px;
+}
+ul.shorthand-list li {
+    padding: 4px 0;
+}
+
+/* 7. Danh sách với màu sắc, background, padding, margin */
+ul.styled-color-list {
+    background-color: #2d3748;
+    padding: 20px;
+    border-radius: 8px;
+    list-style: none; /* Bỏ bullet mặc định để tự custom */
+}
+ul.styled-color-list li {
+    color: #ffffff;
+    background-color: #4a5568;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border-left: 4px solid #48bb78;
+    transition: transform 0.2s, background-color 0.2s;
+}
+ul.styled-color-list li:hover {
+    transform: translateX(6px);
+    background-color: #319795;
+}
+
+/* 8. Bài tập tổng hợp: Lộ trình học lập trình Web */
+.roadmap-card {
+    border-left-color: #805ad5;
+}
+ul.roadmap-list {
+    list-style: disc outside;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 25px 25px 25px 45px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.2);
+}
+ul.roadmap-list li {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8px 0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+}
+ul.roadmap-list li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
