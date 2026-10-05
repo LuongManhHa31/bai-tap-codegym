@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản mới</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h2>Tạo tài khoản mới</h2>
+                <p>Tham gia cùng chúng tôi để trải nghiệm ngay hôm nay.</p>
+            </div>
+            
+            <form action="success.html" method="GET">
+                <div class="input-group">
+                    <label for="fullname">Họ và tên <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Mật khẩu <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" placeholder="Tối thiểu 8 ký tự" required minlength="8">
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirm_password">Xác nhận mật khẩu <span class="required">*</span></label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" required minlength="8">
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a></label>
+                </div>
+
+                <!-- Nút bấm lớn tuân thủ Fitts' Law -->
+                <button type="submit" class="btn-submit">Đăng Ký Ngay</button>
+            </form>
+            
+            <div class="form-footer">
+                <p>Đã có tài khoản? <a href="#">Đăng nhập tại đây</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
