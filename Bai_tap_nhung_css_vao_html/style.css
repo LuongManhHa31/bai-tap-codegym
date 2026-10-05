@@ -1,0 +1,14 @@
+/* External CSS Style */
+.external-title {
+    color: #8e44ad;
+    font-size: 26px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.external-paragraph {
+    color: #27ae60;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+}

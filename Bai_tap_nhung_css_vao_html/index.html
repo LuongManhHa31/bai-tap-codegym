@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Nhúng CSS vào HTML</title>
+    
+    <!-- PHẦN 3: Liên kết External Style từ file style.css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PHẦN 2: Định nghĩa Internal Style bên trong thẻ <style> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .box h3 {
+            margin-top: 0;
+            color: #555;
+            font-size: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        /* Định dạng màu sắc bằng Internal-style */
+        .internal-title {
+            color: #2980b9;
+            font-size: 26px;
+        }
+        .internal-paragraph {
+            color: #e67e22;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Các Cách Nhúng CSS Vào Trang Web</h1>
+
+        <!-- PHẦN 1: INLINE-STYLE -->
+        <div class="box">
+            <h3>Phần 1: Sử dụng Inline-style (Thuộc tính style trực tiếp trên thẻ)</h3>
+            <h1 style="color: #c0392b; font-size: 26px;">Tiêu đề với Inline CSS (Màu Đỏ)</h1>
+            <p style="color: #16a085; font-size: 16px; line-height: 1.6;">
+                Đoạn văn bản này được đổi màu bằng cách sử dụng thuộc tính <code>style="color: #16a085;"</code> trực tiếp trong thẻ <code>&lt;p&gt;</code>.
+            </p>
+        </div>
+
+        <!-- PHẦN 2: INTERNAL-STYLE -->
+        <div class="box">
+            <h3>Phần 2: Sử dụng Internal-style (Thẻ &lt;style&gt; trong phần &lt;head&gt;)</h3>
+            <h1 class="internal-title">Tiêu đề với Internal CSS (Màu Xanh Dương)</h1>
+            <p class="internal-paragraph">
+                Đoạn văn bản này được đổi màu bằng cách định nghĩa class <code>.internal-paragraph</code> bên trong thẻ <code>&lt;style&gt;</code> tại phần <code>&lt;head&gt;</code> của trang web.
+            </p>
+        </div>
+
+        <!-- PHẦN 3: EXTERNAL-STYLE -->
+        <div class="box">
+            <h3>Phần 3: Sử dụng External-style (File style.css riêng biệt liên kết qua &lt;link&gt;)</h3>
+            <h1 class="external-title">Tiêu đề với External CSS (Màu Tím)</h1>
+            <p class="external-paragraph">
+                Đoạn văn bản này được đổi màu từ tệp tin <code>style.css</code> bên ngoài thông qua thẻ <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
