@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng bố cục với Mô hình hộp CSS - Box Model</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Xây dựng bố cục với Mô hình hộp CSS</h1>
+    <p class="subtitle">So sánh sự khác biệt giữa <code>content-box</code> và <code>border-box</code></p>
+
+    <div class="container">
+        <!-- Thẻ 1: content-box -->
+        <div class="card">
+            <h3>Thẻ 1: content-box</h3>
+            <p>
+                Kích thước thực tế phình to ra: 330px &times; 200px (đã cộng thêm 40px padding và 10px border).
+            </p>
+        </div>
+
+        <!-- Thẻ 2: border-box -->
+        <div class="card">
+            <h3>Thẻ 2: border-box</h3>
+            <p>
+                Kích thước thực tế giữ nguyên đúng 280px &times; 150px (padding và border nằm bên trong kích thước).
+            </p>
+        </div>
+
+        <!-- Thẻ 3: border-box -->
+        <div class="card">
+            <h3>Thẻ 3: border-box</h3>
+            <p>
+                Kích thước thực tế giữ nguyên chuẩn 280px &times; 150px, dễ kiểm soát bố cục thiết kế.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
