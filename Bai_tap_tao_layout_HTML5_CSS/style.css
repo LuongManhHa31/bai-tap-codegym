@@ -1,0 +1,278 @@
+/* ============================================================
+   BÀI TẬP: TẠO LAYOUT VỚI CÁC THẺ HTML5 VÀ CSS
+   ============================================================ */
+
+/* Reset & Thiết lập chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #334155;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #2563eb;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #1d4ed8;
+}
+
+code {
+    background-color: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #b91c1c;
+    font-size: 13px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* 1. HEADER (Đầu trang) */
+header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.header-content .tagline {
+    font-size: 15px;
+    color: #cbd5e1;
+}
+
+/* 2. NAV (Thanh điều hướng) */
+nav {
+    background-color: #334155;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 18px;
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* 3. PAGE CONTAINER (Khung chính bao section và aside) */
+.page-container {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* 4. SECTION (Khu vực nội dung chính) */
+.main-section {
+    flex: 1; /* Chiếm phần lớn không gian */
+}
+
+.main-section > h2 {
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* 5. ARTICLE (Từng bài viết độc lập) */
+article.post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.article-header h3 {
+    font-size: 18px;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+.article-header .meta {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.post-content p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #475569;
+    text-align: justify;
+}
+
+.article-footer {
+    margin-top: 15px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 12px;
+}
+
+.read-more {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* 6. ASIDE (Thanh bên lề) */
+aside.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.widget {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.widget h3 {
+    font-size: 16px;
+    color: #0f172a;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.widget p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.widget ul li:last-child {
+    border-bottom: none;
+}
+
+.widget ul li a {
+    font-size: 13px;
+    color: #334155;
+    display: block;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.widget ul li a:hover {
+    color: #2563eb;
+    transform: translateX(4px);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.newsletter-form input {
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+}
+
+.newsletter-form input:focus {
+    border-color: #2563eb;
+}
+
+.newsletter-form button {
+    padding: 9px 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.newsletter-form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* 7. FOOTER (Chân trang) */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 25px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container p {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.footer-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design cho Mobile & Tablet */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    aside.sidebar {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .header-content h1 {
+        font-size: 22px;
+    }
+}

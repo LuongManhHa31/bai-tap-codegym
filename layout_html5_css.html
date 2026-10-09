@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Layout Với Các Thẻ HTML5 và CSS - CodeGym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2563eb;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #b91c1c;
+            font-size: 13px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        /* 1. HEADER */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header-content .tagline {
+            font-size: 15px;
+            color: #cbd5e1;
+        }
+
+        /* 2. NAV */
+        nav {
+            background-color: #334155;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 14px 18px;
+            color: #f8fafc;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* 3. PAGE CONTAINER */
+        .page-container {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        /* 4. SECTION */
+        .main-section {
+            flex: 1;
+        }
+
+        .main-section > h2 {
+            font-size: 20px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        /* 5. ARTICLE */
+        article.post {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .article-header h3 {
+            font-size: 18px;
+            color: #1e3a8a;
+            margin-bottom: 6px;
+        }
+
+        .article-header .meta {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .post-content p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .article-footer {
+            margin-top: 15px;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 12px;
+        }
+
+        .read-more {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* 6. ASIDE */
+        aside.sidebar {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        .widget {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .widget h3 {
+            font-size: 16px;
+            color: #0f172a;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        .widget p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .widget ul {
+            list-style: none;
+        }
+
+        .widget ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .widget ul li a {
+            font-size: 13px;
+            color: #334155;
+            display: block;
+        }
+
+        .widget ul li a:hover {
+            color: #2563eb;
+        }
+
+        /* 7. FOOTER */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 25px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-container p {
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                flex-direction: column;
+            }
+            aside.sidebar {
+                width: 100%;
+            }
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>🌐 Cổng Thông Tin Công Nghệ HTML5</h1>
+            <p class="tagline">Khám phá sức mạnh của các thẻ ngữ nghĩa Semantic Web hiện đại</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li><a href="#news">Tin tức</a></li>
+                <li><a href="#tutorials">Hướng dẫn HTML5</a></li>
+                <li><a href="#css">Bố cục CSS</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <section class="main-section">
+            <h2>Bài Viết Tiêu Điểm</h2>
+
+            <article class="post">
+                <header class="article-header">
+                    <h3>Giới thiệu về các thẻ ngữ nghĩa trong HTML5</h3>
+                    <p class="meta">Đăng bởi <strong>Admin</strong> | Ngày 09/10/2026 | Chuyên mục: <em>Web Frontend</em></p>
+                </header>
+                <div class="post-content">
+                    <p>HTML5 giới thiệu các thẻ chuẩn như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> và <code>&lt;footer&gt;</code> giúp cấu trúc tài liệu rõ ràng, dễ bảo trì và tối ưu SEO vượt trội.</p>
+                </div>
+                <footer class="article-footer">
+                    <a href="#" class="read-more">Đọc tiếp &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="post">
+                <header class="article-header">
+                    <h3>Kết hợp HTML5 với CSS Layout hiện đại</h3>
+                    <p class="meta">Đăng bởi <strong>CodeGym Developer</strong> | Ngày 09/10/2026 | Chuyên mục: <em>CSS Tutorials</em></p>
+                </header>
+                <div class="post-content">
+                    <p>Sự kết hợp giữa thẻ ngữ nghĩa HTML5 và CSS hiện đại tạo nên những trang web chuẩn responsive, hiển thị hoàn hảo trên cả máy tính để bàn, máy tính bảng và điện thoại di động.</p>
+                </div>
+                <footer class="article-footer">
+                    <a href="#" class="read-more">Đọc tiếp &rarr;</a>
+                </footer>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>📌 Giới Thiệu Chuyên Mục</h3>
+                <p>Website mẫu thực hành sử dụng trọn bộ các thẻ ngữ nghĩa HTML5 theo chương trình đào tạo CodeGym.</p>
+            </div>
+
+            <div class="widget">
+                <h3>📂 Danh Mục Thẻ HTML5</h3>
+                <ul>
+                    <li><a href="#">&lt;header&gt; - Đầu trang</a></li>
+                    <li><a href="#">&lt;nav&gt; - Thanh điều hướng</a></li>
+                    <li><a href="#">&lt;section&gt; - Phân đoạn nội dung</a></li>
+                    <li><a href="#">&lt;article&gt; - Bài viết độc lập</a></li>
+                    <li><a href="#">&lt;aside&gt; - Thanh bên lề</a></li>
+                    <li><a href="#">&lt;footer&gt; - Chân trang</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Cổng Thông Tin HTML5. Bài tập thực hành tạo layout bằng HTML5 và CSS - CodeGym.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

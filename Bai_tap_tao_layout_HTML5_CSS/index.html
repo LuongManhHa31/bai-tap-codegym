@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Layout Với Các Thẻ HTML5 và CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. HEADER: Đầu trang -->
+    <header>
+        <div class="header-content">
+            <h1>🌐 Cổng Thông Tin Công Nghệ HTML5</h1>
+            <p class="tagline">Khám phá sức mạnh của các thẻ ngữ nghĩa Semantic Web hiện đại</p>
+        </div>
+    </header>
+
+    <!-- 2. NAV: Menu điều hướng -->
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li><a href="#news">Tin tức</a></li>
+                <li><a href="#tutorials">Hướng dẫn HTML5</a></li>
+                <li><a href="#css">Bố cục CSS</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 3. MAIN CONTAINER: Bao quanh khu vực nội dung chính và sidebar -->
+    <div class="page-container">
+
+        <!-- 4. SECTION: Khu vực chứa các bài viết chính -->
+        <section class="main-section">
+            <h2>Bài Viết Tiêu Điểm</h2>
+
+            <!-- 5. ARTICLE 1: Bài viết độc lập số 1 -->
+            <article class="post">
+                <header class="article-header">
+                    <h3>Giới thiệu về các thẻ ngữ nghĩa trong HTML5</h3>
+                    <p class="meta">Đăng bởi <strong>Admin</strong> | Ngày 09/10/2026 | Chuyên mục: <em>Web Frontend</em></p>
+                </header>
+                <div class="post-content">
+                    <p>Trong các phiên bản HTML trước đây, các nhà phát triển thường sử dụng thẻ <code>&lt;div&gt;</code> cùng với các class hoặc id để phân chia bố cục như <code>&lt;div id="header"&gt;</code>, <code>&lt;div id="footer"&gt;</code>. Điều này không mang lại nhiều ý nghĩa về mặt ngữ nghĩa cho các trình thu thập dữ liệu (Search Engine Bots).</p>
+                    <p>HTML5 đã giới thiệu các thẻ chuẩn như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> và <code>&lt;footer&gt;</code> giúp cấu trúc tài liệu rõ ràng, dễ bảo trì và tối ưu SEO vượt trội.</p>
+                </div>
+                <footer class="article-footer">
+                    <a href="#" class="read-more">Đọc tiếp &rarr;</a>
+                </footer>
+            </article>
+
+            <!-- 5. ARTICLE 2: Bài viết độc lập số 2 -->
+            <article class="post">
+                <header class="article-header">
+                    <h3>Kết hợp HTML5 với CSS Layout hiện đại</h3>
+                    <p class="meta">Đăng bởi <strong>CodeGym Developer</strong> | Ngày 09/10/2026 | Chuyên mục: <em>CSS Tutorials</em></p>
+                </header>
+                <div class="post-content">
+                    <p>Khi đã có một khung sườn HTML5 vững chắc, việc áp dụng CSS để dàn trang (Layout) trở nên vô cùng linh hoạt. Bạn có thể sử dụng Flexbox cho các bố cục 1 chiều hoặc CSS Grid cho hệ thống lưới đa chiều phức tạp.</p>
+                    <p>Sự kết hợp giữa thẻ ngữ nghĩa HTML5 và CSS hiện đại tạo nên những trang web chuẩn responsive, hiển thị hoàn hảo trên cả máy tính để bàn, máy tính bảng và điện thoại di động.</p>
+                </div>
+                <footer class="article-footer">
+                    <a href="#" class="read-more">Đọc tiếp &rarr;</a>
+                </footer>
+            </article>
+        </section>
+
+        <!-- 6. ASIDE: Thanh bên chứa nội dung bổ sung -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>📌 Giới Thiệu Chuyên Mục</h3>
+                <p>Website mẫu thực hành sử dụng trọn bộ các thẻ ngữ nghĩa HTML5 theo chương trình đào tạo CodeGym.</p>
+            </div>
+
+            <div class="widget">
+                <h3>📂 Danh Mục Thẻ HTML5</h3>
+                <ul>
+                    <li><a href="#">&lt;header&gt; - Đầu trang</a></li>
+                    <li><a href="#">&lt;nav&gt; - Thanh điều hướng</a></li>
+                    <li><a href="#">&lt;section&gt; - Phân đoạn nội dung</a></li>
+                    <li><a href="#">&lt;article&gt; - Bài viết độc lập</a></li>
+                    <li><a href="#">&lt;aside&gt; - Thanh bên lề</a></li>
+                    <li><a href="#">&lt;footer&gt; - Chân trang</a></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>🔔 Đăng Ký Bản Tin</h3>
+                <p>Nhận các bài hướng dẫn lập trình mới nhất hàng tuần qua email:</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đã đăng ký thành công!');">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">Đăng ký</button>
+                </form>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- 7. FOOTER: Chân trang -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Cổng Thông Tin HTML5. Bài tập thực hành tạo layout bằng HTML5 và CSS - CodeGym.</p>
+            <p>Thiết kế với các thẻ chuẩn: <code>header</code>, <code>nav</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
