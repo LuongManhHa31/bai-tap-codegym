@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery - CodeGym</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        h4 {
+            color: #64748b;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        div.gallery {
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #334155;
+            background-color: #ffffff;
+        }
+
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%; /* Màn hình > 700px: 4 ảnh trên 1 dòng */
+        }
+
+        /* Với các màn hình nhỏ hơn 700px: hiển thị 2 ảnh trên 1 dòng */
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+
+        /* Với các màn hình nhỏ hơn 500px: hiển thị 1 ảnh trên 1 dòng */
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .info-box {
+            margin-top: 40px;
+            padding: 15px 20px;
+            background-color: #e0f2fe;
+            border-left: 4px solid #0284c7;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #0369a1;
+        }
+
+        .info-box ul {
+            margin: 8px 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Responsive Image Gallery</h2>
+    <h4>Thay đổi kích thước cửa sổ trình duyệt để quan sát hiệu ứng responsive.</h4>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://www.w3schools.com/css/img_5terre.jpg">
+                <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc">Thị trấn Cinque Terre ven biển nước Ý</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://www.w3schools.com/css/img_forest.jpg">
+                <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+            </a>
+            <div class="desc">Rừng cây thiên nhiên xanh mát</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://www.w3schools.com/css/img_lights.jpg">
+                <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+            </a>
+            <div class="desc">Hiện tượng cực quang Bắc Cực rực rỡ</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="https://www.w3schools.com/css/img_mountains.jpg">
+                <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains" width="600" height="400">
+            </a>
+            <div class="desc">Dãy núi tuyết hùng vĩ buổi hoàng hôn</div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="info-box">
+        <p><strong>Quy tắc Responsive:</strong></p>
+        <ul>
+            <li>Màn hình &gt; 700px: Hiển thị <strong>4 ảnh</strong> trên 1 dòng.</li>
+            <li>Màn hình &le; 700px: Hiển thị <strong>2 ảnh</strong> trên 1 dòng.</li>
+            <li>Màn hình &le; 500px: Hiển thị <strong>1 ảnh</strong> trên 1 dòng.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
