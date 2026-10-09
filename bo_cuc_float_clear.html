@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục bằng Float - CodeGym</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f8;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        /* Cột bên trái: chiếm 60%, float sang trái */
+        .left-column {
+            width: 60%;
+            float: left;
+            background-color: lightblue;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            min-height: 250px;
+        }
+
+        /* Cột bên phải: chiếm 38%, float sang phải */
+        .right-column {
+            width: 38%;
+            float: right;
+            background-color: lightgreen;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            min-height: 250px;
+        }
+
+        /* Clearfix xử lý float */
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <h2>Cột bên trái chứa nội dung chính</h2>
+            <p>Đây là khu vực nội dung chính của trang web chiếm 60% chiều rộng và được căn lề trái bằng <code>float: left</code>.</p>
+        </div>
+        <div class="right-column">
+            <h3>Cột bên phải chứa sidebar</h3>
+            <p>Khu vực sidebar chiếm 38% chiều rộng và được căn sang phải bằng <code>float: right</code>.</p>
+        </div>
+    </div>
+</body>
+</html>
