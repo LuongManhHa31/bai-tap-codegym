@@ -1,0 +1,626 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ========================================================
+   1. CSS RESET & GLOBAL STYLES
+   ======================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ========================================================
+   2. SITE WRAPPER (FLEXBOX COLUMN TO KEEP FOOTER AT BOTTOM)
+   ======================================================== */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========================================================
+   3. HEADER (FLEXBOX ROW)
+   ======================================================== */
+.site-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 20px 24px;
+  border-bottom: 2px solid #334155;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  font-size: 32px;
+  background: #1e3a8a;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid #3b82f6;
+}
+
+.brand-text h1 {
+  font-size: 24px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-text p {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-status {
+  background: #1e3a8a;
+  color: #93c5fd;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: 1px solid #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.screen-indicator {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.indicator-desktop {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.indicator-mobile {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+/* ========================================================
+   4. NAVIGATION (FLEXBOX ROW)
+   ======================================================== */
+.site-nav {
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  flex-wrap: wrap;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  display: block;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #ffffff;
+  background-color: #334155;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.nav-search input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.nav-search input:focus {
+  border-color: #3b82f6;
+}
+
+.nav-search button {
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-search button:hover {
+  background: #1d4ed8;
+}
+
+/* ========================================================
+   5. SITE BODY (FLEXBOX MAIN LAYOUT: CONTENT + SIDEBAR)
+   ======================================================== */
+.site-body {
+  max-width: 1200px;
+  width: 100%;
+  margin: 24px auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 28px;
+  flex: 1; /* Hấp thụ toàn bộ khoảng trống còn lại */
+}
+
+/* 5.1 MAIN CONTENT (flex: 1 hoặc flex: 3 chiếm phần lớn không gian) */
+.site-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0; /* Tránh tràn flex item */
+}
+
+/* Hero Article */
+.hero-article {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.hero-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.hero-article h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 18px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #64748b;
+  flex-wrap: wrap;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+/* Articles Section: Lưới dạng Grid tạo bằng CSS Flexbox */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.section-heading h3 {
+  font-size: 20px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.sub-label {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* BỐ CỤC GRID BẰNG FLEXBOX: flex-wrap và flex item basis */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex-card {
+  flex: 1 1 calc(50% - 10px); /* 2 cột trên desktop bằng Flexbox */
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.flex-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.08);
+}
+
+.card-thumb {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.thumb-blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.thumb-green { background: linear-gradient(135deg, #16a34a, #15803d); }
+.thumb-purple { background: linear-gradient(135deg, #9333ea, #7e22ce); }
+.thumb-orange { background: linear-gradient(135deg, #ea580c, #c2410c); }
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-category {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.card-body h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.card-body p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.card-footer {
+  margin-top: auto;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+}
+
+.read-more {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 5.2 SIDEBAR (flex: 1) */
+.site-sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 260px;
+}
+
+.sidebar-widget {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.widget-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  border-left: 3px solid #2563eb;
+  padding-left: 8px;
+}
+
+.widget-text {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+/* Widget Monitor */
+.monitor-box {
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.monitor-box .val {
+  font-weight: 800;
+  color: #2563eb;
+  font-size: 16px;
+}
+
+.widget-hint {
+  font-size: 12.5px;
+  color: #475569;
+}
+
+/* Category List */
+.category-list {
+  list-style: none;
+}
+
+.category-list li {
+  margin-bottom: 8px;
+}
+
+.category-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #334155;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.category-list a:hover {
+  background-color: #f1f5f9;
+  color: #2563eb;
+}
+
+.category-list .count {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 11.5px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newsletter-form button:hover {
+  background: #1d4ed8;
+}
+
+/* ========================================================
+   6. FOOTER (FLEXBOX COLUMN & MULTI-COLUMNS)
+   ======================================================== */
+.site-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  margin-top: auto;
+  border-top: 1px solid #334155;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a,
+.footer-col a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 13.5px;
+}
+
+.footer-links a:hover,
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e293b;
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ========================================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES <= 768px CHO MOBILE)
+   Theo yêu cầu: Trên mobile các phần tử xếp dọc
+   ======================================================== */
+@media (max-width: 768px) {
+  /* Header trên Mobile: xếp dọc */
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand {
+    flex-direction: column;
+  }
+
+  /* Navigation trên Mobile: xếp dọc gọn gàng */
+  .nav-container {
+    flex-direction: column;
+    padding: 10px 16px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .nav-search {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-search input {
+    flex: 1;
+  }
+
+  /* SITE BODY TRÊN MOBILE: CHUYỂN TỪ HÀNG NGANG SANG CỘT DỌC */
+  .site-body {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  /* Các Card bài viết trên Mobile: Xếp 1 cột duy nhất */
+  .flex-card {
+    flex: 1 1 100%;
+  }
+
+  /* Sidebar trên Mobile: Xếp xuống phía dưới nội dung chính */
+  .site-sidebar {
+    min-width: 100%;
+  }
+
+  /* Footer trên Mobile: Xếp dọc */
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

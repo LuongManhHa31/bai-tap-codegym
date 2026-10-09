@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Bài tập] Tạo bố cục responsive bằng CSS Flexbox</title>
+  <link rel="stylesheet" href="Bai_tap_bo_cuc_responsive_css_flexbox/style.css">
+</head>
+<body>
+  <!-- Container tổng thể -->
+  <div class="site-wrapper">
+    <!-- 1. Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <div class="brand">
+          <div class="brand-logo">🌐</div>
+          <div class="brand-text">
+            <h1>TechHub Magazine</h1>
+            <p>Trang tin tức công nghệ & lập trình hiện đại</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <span class="badge-status">Flexbox Layout</span>
+          <div class="screen-indicator" id="screenBadge">Desktop View</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Navigation -->
+    <nav class="site-nav">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li><a href="#" class="active">Trang chủ</a></li>
+          <li><a href="#featured">Tin nổi bật</a></li>
+          <li><a href="#frontend">Web Frontend</a></li>
+          <li><a href="#flexbox">CSS Flexbox</a></li>
+          <li><a href="#tutorials">Hướng dẫn</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+        <div class="nav-search">
+          <input type="text" placeholder="Tìm kiếm bài viết..." aria-label="Tìm kiếm">
+          <button type="button">Tìm</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 3 & 4. Main Body: Gồm Main Content và Sidebar được sắp xếp bằng Flexbox -->
+    <div class="site-body">
+      <!-- Main Content (Nội dung chính) -->
+      <main class="site-content" id="featured">
+        <!-- Banner bài viết tiêu điểm -->
+        <section class="hero-article">
+          <div class="hero-tag">Tiêu điểm hôm nay</div>
+          <h2>Bí kíp làm chủ CSS Flexbox từ cơ bản đến nâng cao cho Web Developer</h2>
+          <p class="hero-desc">
+            Khám phá sức mạnh của Flexbox trong việc xây dựng các bố cục đa chiều, căn chỉnh phần tử hoàn hảo và tạo giao diện Responsive thích ứng linh hoạt với mọi kích cỡ màn hình.
+          </p>
+          <div class="hero-meta">
+            <span>✍️ Bởi Lương Mạnh Hà</span>
+            <span>📅 Tháng 10, 2026</span>
+            <span>⏱️ 5 phút đọc</span>
+          </div>
+        </section>
+
+        <!-- Lưới các bài viết dạng Grid được tạo bằng Flexbox -->
+        <section class="articles-grid-section">
+          <div class="section-heading">
+            <h3>Bài viết mới nhất</h3>
+            <span class="sub-label">Sắp xếp dạng Grid bằng Flexbox (flex-wrap)</span>
+          </div>
+
+          <div class="flex-grid">
+            <!-- Article Card 1 -->
+            <article class="flex-card">
+              <div class="card-thumb thumb-blue">📐 Layout</div>
+              <div class="card-body">
+                <span class="card-category">CSS Bố cục</span>
+                <h4>Hiểu sâu về Flex Container & Flex Items</h4>
+                <p>Nắm rõ trục chính (Main axis) và trục phụ (Cross axis) để chủ động điều hướng phần tử.</p>
+                <div class="card-footer">
+                  <span class="read-more">Đọc tiếp &rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 2 -->
+            <article class="flex-card">
+              <div class="card-thumb thumb-green">📱 Responsive</div>
+              <div class="card-body">
+                <span class="card-category">RWD Mobile</span>
+                <h4>Kết hợp Media Queries và Flexbox</h4>
+                <p>Chuyển đổi mượt mà giữa bố cục đa cột trên Desktop sang cột đơn trên Mobile.</p>
+                <div class="card-footer">
+                  <span class="read-more">Đọc tiếp &rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 3 -->
+            <article class="flex-card">
+              <div class="card-thumb thumb-purple">⚡ Performance</div>
+              <div class="card-body">
+                <span class="card-category">Tối ưu hóa</span>
+                <h4>Flex-grow, Flex-shrink và Flex-basis</h4>
+                <p>Bộ ba thuộc tính quyết định tỷ lệ phân bổ kích thước và không gian trống.</p>
+                <div class="card-footer">
+                  <span class="read-more">Đọc tiếp &rarr;</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 4 -->
+            <article class="flex-card">
+              <div class="card-thumb thumb-orange">🛠️ Thực hành</div>
+              <div class="card-body">
+                <span class="card-category">CodeGym Frontend</span>
+                <h4>Xây dựng Navigation Bar đa cấp tự co dãn</h4>
+                <p>Ứng dụng flex-flow và justify-content để tạo thanh menu chuyên nghiệp.</p>
+                <div class="card-footer">
+                  <span class="read-more">Đọc tiếp &rarr;</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar (Khu vực phụ) -->
+      <aside class="site-sidebar">
+        <!-- Widget 1: Thông tin màn hình -->
+        <div class="sidebar-widget widget-monitor">
+          <h4 class="widget-title">📊 Giám sát Responsive</h4>
+          <p class="widget-text">Kích thước trình duyệt thực tế:</p>
+          <div class="monitor-box">
+            <span class="label">Chiều rộng:</span>
+            <span class="val" id="monitorWidth">-- px</span>
+          </div>
+          <p class="widget-hint">
+            💡 <em>Thu nhỏ trình duyệt xuống dưới <strong>768px</strong> để xem bố cục tự động chuyển sang Mobile xếp dọc!</em>
+          </p>
+        </div>
+
+        <!-- Widget 2: Danh mục chủ đề -->
+        <div class="sidebar-widget">
+          <h4 class="widget-title">📚 Chuyên mục phổ biến</h4>
+          <ul class="category-list">
+            <li><a href="#"><span>HTML5 Semantic</span><span class="count">12</span></a></li>
+            <li><a href="#"><span>CSS Flexbox</span><span class="count">24</span></a></li>
+            <li><a href="#"><span>CSS Grid System</span><span class="count">18</span></a></li>
+            <li><a href="#"><span>Responsive Design</span><span class="count">31</span></a></li>
+            <li><a href="#"><span>JavaScript Core</span><span class="count">15</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Widget 3: Bản tin đăng ký -->
+        <div class="sidebar-widget widget-newsletter">
+          <h4 class="widget-title">📬 Nhận bản tin công nghệ</h4>
+          <p class="widget-text">Cập nhật các bài học CSS & Frontend mới nhất mỗi tuần.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký!');">
+            <input type="email" placeholder="Nhập email của bạn..." required>
+            <button type="submit">Đăng ký ngay</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <!-- 5. Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Về TechHub Magazine</h4>
+          <p>Dự án thực hành xây dựng bố cục Web Responsive hoàn chỉnh bằng CSS Flexbox thuộc khóa học CodeGym Frontend.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Liên kết nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Khóa học Frontend</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mã nguồn & Tác giả</h4>
+          <p>Tác giả: <strong>Lương Mạnh Hà</strong></p>
+          <p>GitHub Repo: <a href="https://github.com/LuongManhHa31/bai-tap-codegym" target="_blank">LuongManhHa31/bai-tap-codegym</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechHub Magazine. All rights reserved. Powered by CSS Flexbox & Media Queries.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Script giám sát kích thước màn hình -->
+  <script>
+    function updateScreenInfo() {
+      const w = window.innerWidth;
+      const monElem = document.getElementById('monitorWidth');
+      const badgeElem = document.getElementById('screenBadge');
+
+      if (monElem) monElem.textContent = `${w}px`;
+      if (badgeElem) {
+        if (w <= 768) {
+          badgeElem.textContent = 'Mobile View (≤ 768px)';
+          badgeElem.className = 'screen-indicator indicator-mobile';
+        } else {
+          badgeElem.textContent = 'Desktop View (> 768px)';
+          badgeElem.className = 'screen-indicator indicator-desktop';
+        }
+      }
+    }
+    window.addEventListener('resize', updateScreenInfo);
+    window.addEventListener('DOMContentLoaded', updateScreenInfo);
+  </script>
+</body>
+</html>
