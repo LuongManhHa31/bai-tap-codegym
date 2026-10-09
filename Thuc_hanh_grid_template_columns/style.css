@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 30px 20px;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #0f172a;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.example-section {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.example-section h2 {
+    font-size: 18px;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.example-section p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+code {
+    background-color: #e2e8f0;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+/* ============================================================
+   VÍ DỤ 1: Tạo 3 cột có kích thước bằng nhau
+   ============================================================ */
+.grid-container.example-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-container.example-1 div {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #0369a1;
+    border-radius: 4px;
+}
+
+/* ============================================================
+   VÍ DỤ 2: Tạo các cột có kích thước khác nhau
+   ============================================================ */
+.grid-container.example-2 {
+    display: grid;
+    grid-template-columns: 100px 200px 1fr;
+    gap: 10px;
+}
+
+.grid-container.example-2 div {
+    background-color: lightgreen;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #1b5e20;
+    border-radius: 4px;
+}
