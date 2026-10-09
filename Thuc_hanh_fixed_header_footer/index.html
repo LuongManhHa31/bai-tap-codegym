@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hướng dẫn tạo Fixed Menu & Fixed Footer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* Fixed Header / Fixed Menu */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* Nội dung chính */
+        .main {
+            padding: 24px;
+            margin-top: 55px; /* Để nội dung không bị che bởi navbar */
+            margin-bottom: 50px; /* Để nội dung không bị che bởi footer */
+            height: 1500px; /* Dùng để hiển thị thanh cuộn */
+            background: linear-gradient(180deg, #ffffff 0%, #e9ecef 100%);
+        }
+
+        .main h1 {
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+
+        .main h2 {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .content-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            margin-top: 20px;
+            max-width: 800px;
+        }
+
+        /* Fixed Footer */
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 12px 16px;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Top Menu (Header) -->
+    <div class="navbar">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Fixed Top Menu</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page while scrolling</h2>
+        
+        <div class="content-card">
+            <h3>Giải thích các thuộc tính quan trọng:</h3>
+            <ul>
+                <li><strong>position: fixed;</strong> - Giữ menu hoặc footer cố định ở một vị trí trên màn hình dù người dùng cuộn trang.</li>
+                <li><strong>top: 0;</strong> - Định vị menu ở phần trên cùng của trình duyệt.</li>
+                <li><strong>bottom: 0;</strong> - Định vị footer ở phần dưới cùng của trình duyệt.</li>
+                <li><strong>width: 100%;</strong> - Đặt độ rộng phủ kín 100% chiều ngang màn hình.</li>
+                <li><strong>z-index: 1000;</strong> - Giúp header và footer luôn nằm nổi trên các nội dung khác khi cuộn.</li>
+            </ul>
+        </div>
+
+        <p>Cuộn xuống bên dưới để quan sát header vẫn ở trên cùng và footer luôn ở dưới cùng...</p>
+        <p>Some text some text some text some text...</p>
+        <p>Some text some text some text some text...</p>
+        <p>Some text some text some text some text...</p>
+        <p>Some text some text some text some text...</p>
+        <p>Some text some text some text some text...</p>
+        <p>Some text some text some text some text...</p>
+    </div>
+
+    <!-- Fixed Footer -->
+    <div class="footer">
+        &copy; 2026 CodeGym Practice - Fixed Header & Fixed Footer Layout
+    </div>
+
+</body>
+</html>
