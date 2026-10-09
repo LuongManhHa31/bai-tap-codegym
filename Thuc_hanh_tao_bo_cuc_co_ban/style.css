@@ -1,0 +1,196 @@
+/* ============================================================
+   BÀI THỰC HÀNH: TẠO BỐ CỤC CƠ BẢN
+   ============================================================ */
+
+/* 1. Thiết lập cố định phông chữ cho cả trang */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #eef2f5;
+    color: #333;
+}
+
+/* 1. #main: Phân vùng chứa toàn bộ nội dung, cố định độ rộng và căn giữa màn hình */
+#main {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 2. #head: Phân vùng chứa logo & banner đầu trang */
+#head {
+    height: 100px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    border: 1px solid #172554;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#head h1 {
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* 4. #head-link: Phân vùng chứa các liên kết đầu trang */
+#head-link {
+    height: 42px;
+    background-color: #333333;
+    margin-bottom: 10px;
+    line-height: 42px;
+    padding: 0 15px;
+}
+
+#head-link ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#head-link ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+#head-link ul li a:hover {
+    color: #60a5fa;
+}
+
+/* 6. #left: Phân vùng nội dung bên trái, float: left dạt sang trái */
+#left {
+    width: 200px;
+    min-height: 420px;
+    float: left;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#left h3 {
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 8px;
+    color: #1e293b;
+}
+
+#left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#left ul li {
+    margin-bottom: 10px;
+}
+
+#left ul li a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#left ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 8. #content: Phân vùng nội dung chính ở giữa */
+#content {
+    width: 540px;
+    min-height: 420px;
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 15px 20px;
+    margin: 0 10px 10px 10px;
+}
+
+#content h2 {
+    margin-top: 0;
+    color: #0f172a;
+    font-size: 20px;
+}
+
+.sub-box {
+    background-color: #f1f5f9;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    border-left: 4px solid #2563eb;
+}
+
+.sub-box h4 {
+    margin: 0 0 6px 0;
+    color: #1e3a8a;
+}
+
+.sub-box p {
+    margin: 0;
+    font-size: 13px;
+    color: #475569;
+}
+
+/* 8. #right: Phân vùng thông tin bên phải trang */
+#right {
+    width: 200px;
+    min-height: 420px;
+    float: right;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#right h3 {
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 8px;
+    color: #1e293b;
+}
+
+.widget {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.widget p {
+    margin: 0;
+}
+
+/* 10. #footer: Phân vùng thông tin cuối trang (clear: both để tránh lỗi tràn float) */
+#footer {
+    clear: both;
+    height: 60px;
+    background-color: #1e293b;
+    color: #ffffff;
+    text-align: center;
+    line-height: 60px;
+    border-top: 2px solid #0f172a;
+}
+
+#footer p {
+    margin: 0;
+    font-size: 14px;
+}
