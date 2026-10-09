@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] CSS | flex-basis Property</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1>[Thực hành] CSS | Thuộc tính flex-basis</h1>
+      <p class="subtitle">Tìm hiểu kích thước cơ sở ban đầu của Flex Item trên trục chính (Main Axis)</p>
+    </header>
+
+    <!-- Ví dụ 1: Đơn vị px trên trục ngang (row) -->
+    <section class="example-card">
+      <h2>Ví dụ 1: flex-basis với đơn vị px (Main axis = chiều ngang)</h2>
+      <p class="desc">Các phần tử có kích thước cơ sở khác nhau: Item 1 (200px), Item 2 (100px), Item 3 (150px).</p>
+      <div class="container container-ex1">
+        <div class="item item1">Item 1<br><small>200px</small></div>
+        <div class="item item2">Item 2<br><small>100px</small></div>
+        <div class="item item3">Item 3<br><small>150px</small></div>
+      </div>
+    </section>
+
+    <!-- Ví dụ 2: flex-basis thay đổi theo flex-direction: column -->
+    <section class="example-card">
+      <h2>Ví dụ 2: flex-basis với flex-direction: column (Main axis = chiều dọc)</h2>
+      <p class="desc">Khi flex-direction là column, <code>flex-basis: 80px</code> sẽ tác động lên chiều cao của mỗi item.</p>
+      <div class="container container-ex2">
+        <div class="item item-col">Item 1 (chiều cao cơ sở: 80px)</div>
+        <div class="item item-col">Item 2 (chiều cao cơ sở: 80px)</div>
+        <div class="item item-col">Item 3 (chiều cao cơ sở: 80px)</div>
+      </div>
+    </section>
+
+    <!-- Ví dụ 3: flex-basis với phần trăm % -->
+    <section class="example-card">
+      <h2>Ví dụ 3: flex-basis với đơn vị phần trăm (%)</h2>
+      <p class="desc">Mỗi Item thiết lập <code>flex-basis: 50%</code> tạo thành 2 cột cân xứng trên trục ngang.</p>
+      <div class="container container-ex3">
+        <div class="item item-percent">Item 1 (flex-basis: 50%)</div>
+        <div class="item item-percent">Item 2 (flex-basis: 50%)</div>
+      </div>
+    </section>
+
+    <!-- Ví dụ 4: Kết hợp flex-basis với flex-grow -->
+    <section class="example-card">
+      <h2>Ví dụ 4: Kết hợp flex-basis với flex-grow (Tỷ lệ 1 : 2 : 1)</h2>
+      <p class="desc">Cả 3 item có kích thước cơ sở ban đầu là 100px trên container 650px. Phần không gian thừa được chia theo tỷ lệ grow (Item 2 nhận gấp đôi).</p>
+      <div class="container container-ex4">
+        <div class="item grow-1">Item 1<br><small>basis: 100px | grow: 1</small></div>
+        <div class="item grow-2">Item 2<br><small>basis: 100px | grow: 2</small></div>
+        <div class="item grow-1">Item 3<br><small>basis: 100px | grow: 1</small></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

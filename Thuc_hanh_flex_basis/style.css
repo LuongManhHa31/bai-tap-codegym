@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9;
+  color: #333;
+  padding: 25px 20px;
+  line-height: 1.6;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 26px;
+  color: #1e3c72;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #64748b;
+}
+
+.example-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 22px 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.example-card h2 {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 6px;
+  border-left: 4px solid #2a5298;
+  padding-left: 10px;
+}
+
+.example-card .desc {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.example-card code {
+  background-color: #f1f5f9;
+  color: #d63384;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+}
+
+/* Base Container & Item */
+.container {
+  display: flex;
+  gap: 10px;
+  background-color: #f8fafc;
+  border: 2px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.item {
+  padding: 18px 12px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ví dụ 1 */
+.container-ex1 .item {
+  background-color: #bae6fd;
+  color: #0369a1;
+}
+
+.container-ex1 .item1 {
+  flex-basis: 200px;
+}
+
+.container-ex1 .item2 {
+  flex-basis: 100px;
+}
+
+.container-ex1 .item3 {
+  flex-basis: 150px;
+}
+
+/* Ví dụ 2 */
+.container-ex2 {
+  flex-direction: column;
+  height: 320px;
+}
+
+.container-ex2 .item-col {
+  flex-basis: 80px;
+  background-color: #bbf7d0;
+  color: #15803d;
+}
+
+/* Ví dụ 3 */
+.container-ex3 .item-percent {
+  flex-basis: 50%;
+  background-color: #fecdd3;
+  color: #be123c;
+}
+
+/* Ví dụ 4 */
+.container-ex4 {
+  width: 100%;
+  max-width: 650px;
+}
+
+.container-ex4 .item {
+  flex-basis: 100px;
+  background-color: #ddd6fe;
+  color: #5b21b6;
+}
+
+.container-ex4 .grow-1 {
+  flex-grow: 1;
+}
+
+.container-ex4 .grow-2 {
+  flex-grow: 2;
+  background-color: #c4b5fd;
+  color: #4c1d95;
+  border: 2px solid #7c3aed;
+}
