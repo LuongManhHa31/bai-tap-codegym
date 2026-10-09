@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #f7f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+code {
+    background-color: #eef2f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #d63384;
+}
+
+/* Định dạng khối chứa overflow theo yêu cầu bài thực hành */
+.overflow-box {
+    width: 300px;
+    height: 100px;
+    background-color: lightgray;
+    padding: 10px;
+    overflow: auto; /* Hiển thị thanh cuộn khi nội dung bị tràn */
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    line-height: 1.5;
+    font-size: 14px;
+}
