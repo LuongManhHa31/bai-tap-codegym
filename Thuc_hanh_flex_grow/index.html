@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] CSS | flex-grow Property</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-container">
+    <!-- Header -->
+    <header class="header">
+      <span class="badge">CodeGym Frontend</span>
+      <h1>[Thực hành] CSS | Thuộc tính flex-grow</h1>
+      <p class="subtitle">Tìm hiểu cơ chế dãn nở và phân bổ không gian trống (positive free space) cho các Flex Item</p>
+    </header>
+
+    <!-- Lý thuyết tóm tắt -->
+    <section class="theory-card">
+      <h2>📌 Tóm tắt kiến thức về flex-grow</h2>
+      <div class="theory-grid">
+        <div class="theory-item">
+          <strong>Cú pháp:</strong>
+          <code>flex-grow: &lt;number&gt; | initial | inherit;</code>
+        </div>
+        <div class="theory-item">
+          <strong>Giá trị mặc định:</strong>
+          <code>flex-grow: 0</code> (phần tử không tự động mở rộng để lấp đầy khoảng trống)
+        </div>
+        <div class="theory-item">
+          <strong>Nguyên lý hoạt động:</strong>
+          <span>Khi tổng kích thước ban đầu của các item nhỏ hơn vùng chứa, không gian thừa còn lại sẽ được phân chia theo tỷ lệ <code>flex-grow</code> của các item.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ví dụ 1: Yêu cầu chính theo đề bài CodeGym (5 Flex Items, Div 2 áp dụng flex-grow) -->
+    <section class="example-card">
+      <div class="card-header">
+        <h2>Ví dụ 1: Áp dụng flex-grow trên Div thứ 2 (Yêu cầu chính)</h2>
+        <span class="tag tag-primary">Mục tiêu bài học</span>
+      </div>
+      <p class="desc">
+        Trong vùng chứa gồm <strong>5 thẻ div</strong> có kích thước ban đầu cố định (100px). 
+        Chỉ riêng <strong>Div 2</strong> được thiết lập <code>flex-grow: 1</code> (hoặc lớn hơn 0), 
+        các div 1, 3, 4, 5 giữ mặc định <code>flex-grow: 0</code>. 
+        Kết quả là <strong>Div 2 sẽ hấp thụ toàn bộ khoảng trống còn dư</strong> của vùng chứa.
+      </p>
+
+      <div class="container container-ex1">
+        <div class="item item-default">
+          <span class="item-title">Div 1</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-stat">width: 100px</span>
+        </div>
+        <div class="item item-grow-highlight">
+          <span class="item-title">Div 2 (Mở rộng)</span>
+          <span class="item-stat highlight-badge">flex-grow: 1</span>
+          <span class="item-stat">Chiếm trọn phần dư</span>
+        </div>
+        <div class="item item-default">
+          <span class="item-title">Div 3</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-stat">width: 100px</span>
+        </div>
+        <div class="item item-default">
+          <span class="item-title">Div 4</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-stat">width: 100px</span>
+        </div>
+        <div class="item item-default">
+          <span class="item-title">Div 5</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-stat">width: 100px</span>
+        </div>
+      </div>
+      <div class="formula-box">
+        💡 <strong>Giải thích:</strong> Tổng chiều rộng ban đầu = 5 &times; 100px = 500px. Với container rộng hơn 500px, toàn bộ số pixel thừa còn lại sẽ được cộng dồn vào Div 2!
+      </div>
+    </section>
+
+    <!-- Ví dụ 2: So sánh tỷ lệ flex-grow khác nhau giữa 5 items -->
+    <section class="example-card">
+      <div class="card-header">
+        <h2>Ví dụ 2: Tỷ lệ phân chia khác nhau giữa 5 Flex Items (1 : 3 : 1 : 2 : 1)</h2>
+        <span class="tag tag-secondary">So sánh tỷ lệ</span>
+      </div>
+      <p class="desc">
+        Khi nhiều item cùng có <code>flex-grow &gt; 0</code>, không gian thừa sẽ được chia theo tỷ số trọng số. 
+        Ở đây tổng trọng số là <strong>1 + 3 + 1 + 2 + 1 = 8 phần</strong>. 
+        Div 2 nhận <strong>3/8</strong> và Div 4 nhận <strong>2/8</strong> không gian thừa.
+      </p>
+
+      <div class="container container-ex2">
+        <div class="item item-ratio-1">
+          <span class="item-title">Div 1</span>
+          <span class="item-stat">grow: 1</span>
+          <span class="item-fraction">(1/8 phần dư)</span>
+        </div>
+        <div class="item item-ratio-3">
+          <span class="item-title">Div 2</span>
+          <span class="item-stat highlight-badge">grow: 3</span>
+          <span class="item-fraction">(3/8 phần dư)</span>
+        </div>
+        <div class="item item-ratio-1">
+          <span class="item-title">Div 3</span>
+          <span class="item-stat">grow: 1</span>
+          <span class="item-fraction">(1/8 phần dư)</span>
+        </div>
+        <div class="item item-ratio-2">
+          <span class="item-title">Div 4</span>
+          <span class="item-stat">grow: 2</span>
+          <span class="item-fraction">(2/8 phần dư)</span>
+        </div>
+        <div class="item item-ratio-1">
+          <span class="item-title">Div 5</span>
+          <span class="item-stat">grow: 1</span>
+          <span class="item-fraction">(1/8 phần dư)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ví dụ 3: Tất cả 5 items đều có flex-grow: 1 -->
+    <section class="example-card">
+      <div class="card-header">
+        <h2>Ví dụ 3: Tất cả 5 item đều thiết lập flex-grow: 1</h2>
+        <span class="tag tag-success">Chia đều 100%</span>
+      </div>
+      <p class="desc">
+        Khi cả 5 phần tử đều có <code>flex-grow: 1</code> và cùng kích thước cơ sở ban đầu, 
+        khoảng trống còn lại sẽ được chia đều 5 phần bằng nhau, giúp mỗi item đạt cùng độ rộng chính xác.
+      </p>
+
+      <div class="container container-ex3">
+        <div class="item item-equal">Div 1<br><small>grow: 1</small></div>
+        <div class="item item-equal">Div 2<br><small>grow: 1</small></div>
+        <div class="item item-equal">Div 3<br><small>grow: 1</small></div>
+        <div class="item item-equal">Div 4<br><small>grow: 1</small></div>
+        <div class="item item-equal">Div 5<br><small>grow: 1</small></div>
+      </div>
+    </section>
+
+    <!-- Ví dụ 4: Bộ điều khiển trực quan tương tác (Interactive Playground) -->
+    <section class="example-card">
+      <div class="card-header">
+        <h2>Ví dụ 4: Trải nghiệm tương tác - Thay đổi flex-grow của Div 2 theo thời gian thực</h2>
+        <span class="tag tag-interactive">Interactive Live Demo</span>
+      </div>
+      <p class="desc">
+        Kéo thanh trượt bên dưới để thay đổi giá trị <code>flex-grow</code> của Div 2 và quan sát sự co dãn trực quan trên 5 item.
+      </p>
+
+      <div class="controls-panel">
+        <div class="control-group">
+          <label for="growRange">Giá trị <code>flex-grow</code> của Div 2: <span id="growValue" class="value-highlight">2</span></label>
+          <input type="range" id="growRange" min="0" max="8" value="2" step="1">
+        </div>
+        <div class="control-group">
+          <label>flex-grow của 4 Div còn lại: <span class="value-badge">0</span></label>
+        </div>
+      </div>
+
+      <div class="container container-interactive" id="interactiveContainer">
+        <div class="item item-demo item-demo-other">
+          <span class="item-title">Div 1</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-width" id="w1">-- px</span>
+        </div>
+        <div class="item item-demo item-demo-target" id="demoDiv2">
+          <span class="item-title">Div 2 (Target)</span>
+          <span class="item-stat highlight-badge" id="demoGrowLabel">grow: 2</span>
+          <span class="item-width" id="w2">-- px</span>
+        </div>
+        <div class="item item-demo item-demo-other">
+          <span class="item-title">Div 3</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-width" id="w3">-- px</span>
+        </div>
+        <div class="item item-demo item-demo-other">
+          <span class="item-title">Div 4</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-width" id="w4">-- px</span>
+        </div>
+        <div class="item item-demo item-demo-other">
+          <span class="item-title">Div 5</span>
+          <span class="item-stat">grow: 0</span>
+          <span class="item-width" id="w5">-- px</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Thực hành lập trình CSS Flexbox | <a href="https://github.com/LuongManhHa31/bai-tap-codegym" target="_blank">GitHub Repository: bai-tap-codegym</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const growRange = document.getElementById('growRange');
+    const growValue = document.getElementById('growValue');
+    const demoDiv2 = document.getElementById('demoDiv2');
+    const demoGrowLabel = document.getElementById('demoGrowLabel');
+
+    function updateMeasurements() {
+      const items = document.querySelectorAll('#interactiveContainer .item');
+      items.forEach((item, index) => {
+        const width = Math.round(item.getBoundingClientRect().width);
+        const wElem = document.getElementById(`w${index + 1}`);
+        if (wElem) {
+          wElem.textContent = `${width}px`;
+        }
+      });
+    }
+
+    growRange.addEventListener('input', (e) => {
+      const val = e.target.value;
+      growValue.textContent = val;
+      demoGrowLabel.textContent = `grow: ${val}`;
+      demoDiv2.style.flexGrow = val;
+      updateMeasurements();
+    });
+
+    window.addEventListener('resize', updateMeasurements);
+    window.addEventListener('DOMContentLoaded', () => {
+      demoDiv2.style.flexGrow = growRange.value;
+      updateMeasurements();
+    });
+  </script>
+</body>
+</html>
