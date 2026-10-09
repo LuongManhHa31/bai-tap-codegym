@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartoonKids - Trang Web Xem Hoạt Hình Trực Tuyến - CodeGym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding-top: 75px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+        }
+
+        .logo-text strong {
+            color: #ff9800;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            max-width: 420px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 4px 6px 4px 16px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .search-box button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .search-box button:hover {
+            background-color: #f57c00;
+        }
+
+        .head-link ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .head-link ul li a {
+            color: #e2e8f0;
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .head-link ul li a:hover {
+            color: #ffb74d;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .head-link ul li a.active {
+            color: #ff9800;
+            font-weight: bold;
+        }
+
+        .intro-banner {
+            background: #fff8e1;
+            border-left: 5px solid #ffb300;
+            padding: 12px 18px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #6d4c41;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .left-content {
+            width: 360px;
+            flex-shrink: 0;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f1f3f5;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-header h3 {
+            font-size: 17px;
+            color: #1e293b;
+        }
+
+        .badge {
+            background: #e0f2fe;
+            color: #0284c7;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .video-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .video-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #eef2f6;
+            background: #fafbfc;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .video-item:hover {
+            background-color: #fff3e0;
+            border-color: #ffb74d;
+            transform: translateY(-2px);
+        }
+
+        .video-item.active {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+        }
+
+        .video-thumb {
+            position: relative;
+            width: 90px;
+            height: 60px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .thumb-placeholder {
+            font-size: 26px;
+        }
+
+        .thumb-badge {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            font-size: 9px;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .video-meta {
+            flex-grow: 1;
+        }
+
+        .video-meta h4 {
+            font-size: 13px;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .video-meta .views {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .video-meta .tag {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .video-item.active .video-meta .tag {
+            background: #ff9800;
+            color: white;
+        }
+
+        .right-content {
+            flex-grow: 1;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .player-container {
+            width: 100%;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .media-screen {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .media-screen iframe,
+        .media-screen video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+
+        .video-info-box {
+            padding: 10px 5px;
+        }
+
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-header h2 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .sub-desc {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-like, .btn-share {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f1f5f9;
+            color: #334155;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 18px 0;
+        }
+
+        .video-description h3 {
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .video-description p {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+
+        .footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 40px 0 25px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff9800;
+            font-weight: bold;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .search-box {
+                order: 3;
+                width: 100%;
+                max-width: 100%;
+            }
+            .header {
+                height: auto;
+                padding: 10px 0;
+            }
+            body {
+                padding-top: 125px;
+            }
+            .content-wrapper {
+                flex-direction: column-reverse;
+            }
+            .left-content, .right-content {
+                width: 100%;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: auto;
+                padding: 10px 0;
+            }
+            body {
+                padding-top: 150px;
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .head-link ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .info-header {
+                flex-direction: column;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">
+                    <span class="logo-icon">🎬</span>
+                    <span class="logo-text">Cartoon<strong>Kids</strong></span>
+                </a>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm phim hoạt hình yêu thích...">
+                <button type="button">🔍 Tìm kiếm</button>
+            </div>
+
+            <nav class="head-link">
+                <ul>
+                    <li><a href="#home" class="active">Trang chủ</a></li>
+                    <li><a href="#moi-nhat">Mới cập nhật</a></li>
+                    <li><a href="#xem-nhieu">Xem nhiều nhất</a></li>
+                    <li><a href="#the-loai">Thể loại</a></li>
+                    <li><a href="#lien-he">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="container">
+            <div class="intro-banner">
+                <p>🌟 <strong>Website hoạt hình chọn lọc:</strong> 100% thuyết minh Tiếng Việt, chuẩn HD/FullHD, an toàn cho trẻ em, không quảng cáo!</p>
+            </div>
+
+            <div class="content-wrapper">
+                <aside class="left-content">
+                    <div class="sidebar-header">
+                        <h3>📺 Danh Sách Video Hoạt Hình</h3>
+                        <span class="badge">5 Video</span>
+                    </div>
+
+                    <ul class="video-list">
+                        <li class="video-item active" onclick="switchVideo('youtube', 'https://www.youtube.com/embed/t0Q2otsqC4I?autoplay=1', 'Tom & Jerry: Những Trận Chiến Hài Hước', 'Tập đặc biệt | FullHD 1080p | Thuyết minh Tiếng Việt', this)">
+                            <div class="video-thumb">
+                                <span class="thumb-badge">1080p</span>
+                                <div class="thumb-placeholder">🐱🐭</div>
+                            </div>
+                            <div class="video-meta">
+                                <h4>Tom & Jerry: Trận Chiến Hài Hước</h4>
+                                <p class="views">👁️ 1.2M lượt xem • 10 phút</p>
+                                <span class="tag">Thuyết minh</span>
+                            </div>
+                        </li>
+
+                        <li class="video-item" onclick="switchVideo('youtube', 'https://www.youtube.com/embed/zSWdZVtXT7E?autoplay=1', 'Chú Thỏ Rừng Tinh Nghịch (3D)', 'Phim hoạt hình 3D kinh điển thế giới | HD 720p', this)">
+                            <div class="video-thumb">
+                                <span class="thumb-badge">HD</span>
+                                <div class="thumb-placeholder">🐰🐿️</div>
+                            </div>
+                            <div class="video-meta">
+                                <h4>Chú Thỏ Rừng Tinh Nghịch (3D)</h4>
+                                <p class="views">👁️ 850K lượt xem • 9 phút</p>
+                                <span class="tag">Lồng tiếng</span>
+                            </div>
+                        </li>
+
+                        <li class="video-item" onclick="switchVideo('video_tag', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 'Cuộc Phiêu Lưu Của Chú Rồng Nhỏ', 'Thẻ video HTML5 chuẩn • Chất lượng cao', this)">
+                            <div class="video-thumb">
+                                <span class="thumb-badge">HTML5</span>
+                                <div class="thumb-placeholder">🐲🔥</div>
+                            </div>
+                            <div class="video-meta">
+                                <h4>Cuộc Phiêu Lưu Của Chú Rồng Nhỏ</h4>
+                                <p class="views">👁️ 620K lượt xem • Thẻ &lt;video&gt;</p>
+                                <span class="tag">HTML5 Video</span>
+                            </div>
+                        </li>
+
+                        <li class="video-item" onclick="switchVideo('youtube', 'https://www.youtube.com/embed/aqz-KE-bpKQ?autoplay=1', 'Chuyến Dã Ngoại Kỳ Thú', 'FullHD 1080p • Chọn lọc an toàn cho thiếu nhi', this)">
+                            <div class="video-thumb">
+                                <span class="thumb-badge">1080p</span>
+                                <div class="thumb-placeholder">🌲🐻</div>
+                            </div>
+                            <div class="video-meta">
+                                <h4>Chuyến Dã Ngoại Kỳ Thú</h4>
+                                <p class="views">👁️ 430K lượt xem • 12 phút</p>
+                                <span class="tag">Thuyết minh</span>
+                            </div>
+                        </li>
+
+                        <li class="video-item" onclick="switchVideo('video_tag', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', 'Thế Giới Giấc Mơ Kỳ Ảo', 'Phim đồ họa sáng tạo cho trẻ khám phá khoa học', this)">
+                            <div class="video-thumb">
+                                <span class="thumb-badge">HTML5</span>
+                                <div class="thumb-placeholder">✨🐘</div>
+                            </div>
+                            <div class="video-meta">
+                                <h4>Thế Giới Giấc Mơ Kỳ Ảo</h4>
+                                <p class="views">👁️ 310K lượt xem • Thẻ &lt;video&gt;</p>
+                                <span class="tag">Khoa học vui</span>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+
+                <main class="right-content">
+                    <div class="player-container">
+                        <div class="media-screen" id="iframeWrapper">
+                            <iframe id="youtubePlayer" 
+                                    src="https://www.youtube.com/embed/t0Q2otsqC4I" 
+                                    title="Tom and Jerry Cartoon" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div class="media-screen" id="videoWrapper" style="display: none;">
+                            <video id="html5VideoPlayer" controls width="100%">
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                                Trình duyệt không hỗ trợ thẻ video HTML5.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="video-info-box">
+                        <div class="info-header">
+                            <div>
+                                <h2 id="videoTitle">Tom & Jerry: Những Trận Chiến Hài Hước</h2>
+                                <p class="sub-desc" id="videoSub">Tập đặc biệt | FullHD 1080p | Thuyết minh Tiếng Việt</p>
+                            </div>
+                            <div class="video-actions">
+                                <button class="btn-like" onclick="alert('Cảm ơn bạn đã thích video!')">👍 Thích (12.4K)</button>
+                                <button class="btn-share" onclick="alert('Đã sao chép link video!')">↗️ Chia sẻ</button>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="video-description">
+                            <h3>Giới thiệu nội dung:</h3>
+                            <p>Phim kể về những cuộc rượt đuổi bất tận nhưng đầy hài hước và thông minh giữa chú mèo Tom tinh nghịch và chú chuột Jerry lém lỉnh. Bộ phim mang lại tiếng cười sảng khoái và những bài học bổ ích cho các bé thiếu nhi.</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Về CartoonKids</h4>
+                <p>Trang web chiếu phim hoạt hình thiếu nhi an toàn hàng đầu Việt Nam, cam kết nội dung bổ ích, chất lượng HD/FullHD và thân thiện với trẻ em.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <p><a href="#home" style="color: #94a3b8;">Trang chủ</a> • <a href="#moi-nhat" style="color: #94a3b8;">Mới cập nhật</a> • <a href="#xem-nhieu" style="color: #94a3b8;">Xem nhiều nhất</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Bản quyền</h4>
+                <p class="copyright">&copy; 2026 CartoonKids. Bản quyền thuộc về CodeGym Internship Web Frontend.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchVideo(type, src, title, sub, element) {
+            var items = document.querySelectorAll('.video-item');
+            items.forEach(function(item) { item.classList.remove('active'); });
+            if (element) { element.classList.add('active'); }
+
+            document.getElementById('videoTitle').innerText = title;
+            document.getElementById('videoSub').innerText = sub;
+
+            var iframeWrapper = document.getElementById('iframeWrapper');
+            var videoWrapper = document.getElementById('videoWrapper');
+            var youtubePlayer = document.getElementById('youtubePlayer');
+            var html5VideoPlayer = document.getElementById('html5VideoPlayer');
+
+            if (type === 'youtube') {
+                videoWrapper.style.display = 'none';
+                html5VideoPlayer.pause();
+                iframeWrapper.style.display = 'block';
+                youtubePlayer.src = src;
+            } else if (type === 'video_tag') {
+                iframeWrapper.style.display = 'none';
+                youtubePlayer.src = '';
+                videoWrapper.style.display = 'block';
+                html5VideoPlayer.src = src;
+                html5VideoPlayer.play();
+            }
+        }
+    </script>
+</body>
+</html>
