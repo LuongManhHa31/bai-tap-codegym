@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar - CodeGym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+            color: white;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            line-height: 1.6;
+        }
+
+        .content h2 {
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .content ul {
+            margin: 15px 0 15px 25px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive cho Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 12px;
+                border-top: 1px solid #444;
+                margin: 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .content {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="menu-icon">☰</div>
+    </nav>
+
+    <div class="content">
+        <h2>Chào mừng đến với trang web của chúng tôi</h2>
+        <p>Thanh điều hướng phía trên tự động co giãn linh hoạt:</p>
+        <ul>
+            <li><strong>Trên Desktop (&gt; 768px):</strong> Hiển thị đầy đủ menu theo hàng ngang.</li>
+            <li><strong>Trên Mobile (&le; 768px):</strong> Menu ẩn đi và hiển thị biểu tượng hamburger (☰). Khi bấm vào ☰, danh sách liên kết sẽ trượt xuống.</li>
+        </ul>
+        <p><em>Hãy thu nhỏ độ rộng trình duyệt hoặc nhấn F12 để kiểm tra giao diện di động!</em></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector(".menu-icon");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuIcon.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
