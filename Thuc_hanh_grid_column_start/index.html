@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid | grid-column-start Property</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>[Thực hành] CSS | Thuộc tính grid-column-start</h1>
+
+        <!-- VÍ DỤ 1: auto -->
+        <div class="example-card">
+            <h2>Ví dụ 1: Giá trị <code>auto</code></h2>
+            <p>Vị trí theo luồng sắp xếp thông thường: <code>grid-column-start: auto;</code></p>
+            <div class="grid-container example-auto">
+                <div class="target-item">Item 1 (auto)</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+        </div>
+
+        <!-- VÍ DỤ 2: span n -->
+        <div class="example-card">
+            <h2>Ví dụ 2: Giá trị <code>span 2</code></h2>
+            <p>Kéo dài qua 2 cột: <code>grid-column-start: span 2;</code> (hoặc chiếm 2 khoảng cột)</p>
+            <div class="grid-container example-span">
+                <div class="target-item">Item 1 (span 2)</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </div>
+        </div>
+
+        <!-- VÍ DỤ 3: column-line -->
+        <div class="example-card">
+            <h2>Ví dụ 3: Giá trị <code>column-line: 2</code></h2>
+            <p>Bắt đầu từ đường kẻ cột số 2: <code>grid-column-start: 2;</code></p>
+            <div class="grid-lines-indicator">
+                <span>Đường kẻ 1</span>
+                <span>Đường kẻ 2</span>
+                <span>Đường kẻ 3</span>
+                <span>Đường kẻ 4</span>
+                <span>Đường kẻ 5</span>
+            </div>
+            <div class="grid-container example-line">
+                <div class="target-item">Item 1 (bắt đầu tại đường kẻ 2)</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
