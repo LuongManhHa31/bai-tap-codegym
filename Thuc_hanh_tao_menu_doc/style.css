@@ -1,0 +1,49 @@
+/* Đặt cố định font chữ và reset căn lề cho body, ul, li để tránh khác biệt giữa các trình duyệt */
+body, ul, li {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6f8;
+    padding: 30px;
+}
+
+/* Định dạng các phần tử trong danh sách (li) */
+#menu ul li {
+    list-style: none; /* Bỏ ký hiệu đầu dòng bullet */
+    position: relative; /* Cho phép danh sách con định vị tương đối theo phần tử cha */
+    width: 120px; /* Chiều rộng nội dung (120px + padding 20px*2 = 160px khớp chính xác với left: 160px) */
+    height: 30px; /* Cố định chiều cao */
+    padding: 0 20px; /* Cố định lề trái và phải */
+    background-color: black; /* Màu nền đen */
+    line-height: 30px; /* Canh giữa dòng chữ theo chiều dọc */
+    cursor: pointer; /* Chuyển con trỏ chuột sang hình bàn tay */
+    border-bottom: 1px solid #333; /* Phân tách giữa các mục */
+}
+
+/* Định dạng các liên kết thẻ a bên trong danh sách */
+#menu ul li a {
+    text-decoration: none; /* Bỏ gạch chân liên kết */
+    color: white; /* Đổi màu chữ sang trắng */
+    display: block; /* Chiếm toàn bộ diện tích mục để dễ bấm */
+}
+
+/* Đổi màu nền khi rê chuột vào mục danh sách */
+#menu ul li:hover {
+    background-color: #333;
+}
+
+/* Định dạng danh sách con (submenu) */
+#menu ul li ul {
+    position: absolute; /* Cố định vị trí xuất hiện của danh sách con */
+    top: 0; /* Góc trên bằng với phần tử cha */
+    left: 160px; /* Góc trái đặt cạnh mép phải của phần tử cha (120px + 20px*2 = 160px) */
+    visibility: hidden; /* Ẩn danh sách con mặc định */
+}
+
+/* Hiển thị danh sách con khi rê chuột vào phần tử cha */
+#menu ul li:hover > ul {
+    visibility: visible; /* Hiển thị danh sách con */
+}

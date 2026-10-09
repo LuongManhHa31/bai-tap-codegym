@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành tạo menu dọc - CodeGym</title>
+    <style>
+        /* Đặt cố định font chữ và reset căn lề cho body, ul, li */
+        body, ul, li {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Định dạng các phần tử trong danh sách (li) */
+        #menu ul li {
+            list-style: none; /* Bỏ ký hiệu đầu dòng bullet */
+            position: relative; /* Cho phép danh sách con định vị theo phần tử cha */
+            width: 120px; /* Chiều rộng 120px + padding 40px = 160px khớp với left: 160px */
+            height: 30px; /* Cố định chiều cao */
+            padding: 0 20px; /* Cố định lề trái và phải */
+            background-color: black; /* Màu nền đen */
+            line-height: 30px; /* Cố định chiều cao dòng văn bản */
+            cursor: pointer; /* Biểu tượng con trỏ bàn tay */
+            border-bottom: 1px solid #333;
+        }
+
+        /* Định dạng thẻ a bên trong danh sách */
+        #menu ul li a {
+            text-decoration: none; /* Bỏ gạch chân */
+            color: white; /* Màu chữ trắng */
+            display: block;
+        }
+
+        /* Đổi màu nền khi rê chuột qua mục chọn */
+        #menu ul li:hover {
+            background-color: #333;
+        }
+
+        /* Định dạng danh sách con (menu dropdown đa cấp) */
+        #menu ul li ul {
+            position: absolute; /* Cố định vị trí xuất hiện của danh sách con */
+            top: 0; /* Canh bằng đỉnh của phần tử cha */
+            left: 160px; /* Cố định vị trí cách mép trái 160px (bằng tổng chiều rộng của li cha) */
+            visibility: hidden; /* Ẩn danh sách con */
+        }
+
+        /* Hiển thị danh sách con khi hover vào phần tử cha */
+        #menu ul li:hover > ul {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h2>[Thực hành] Tạo menu dọc dropdown</h2>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Máy tính</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dịch vụ</a>
+                <ul>
+                    <li><a href="#">Cài đặt</a></li>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Sửa chữa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</body>
+</html>
