@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+      min-height: 100vh;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 500;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      grid-area: content;
+      padding: 30px;
+      background-color: #ffffff;
+    }
+
+    .content h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .content p {
+      margin-bottom: 12px;
+    }
+
+    .content code {
+      background-color: #eef2f7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #d63384;
+      font-family: monospace;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "content"
+          "footer";
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Header - Bố cục trang web CSS Grid</h1>
+    </header>
+    <nav class="sidebar">
+      <h3>Sidebar</h3>
+      <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <main class="content">
+      <h2>Nội dung chính</h2>
+      <p>Đây là khu vực nội dung chính của website được sắp xếp bằng thuộc tính <code>grid-area: content;</code>.</p>
+      <p>Khi hiển thị trên máy tính (Desktop), bố cục chia thành 2 cột: Sidebar chiếm 1 phần (1fr) và Nội dung chiếm 3 phần (3fr).</p>
+      <p>Khi hiển thị trên màn hình nhỏ hoặc điện thoại (Mobile với chiều rộng &le; 768px), toàn bộ bố cục tự động chuyển thành dạng 1 cột dọc (Header &rarr; Sidebar &rarr; Content &rarr; Footer).</p>
+    </main>
+    <footer class="footer">
+      <p>Footer - Bản quyền &copy; 2026 CodeGym</p>
+    </footer>
+  </div>
+</body>
+</html>
