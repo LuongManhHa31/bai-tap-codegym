@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bố cục responsive bằng CSS Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .grid-layout {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "content sidebar"
+        "footer footer";
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 15px;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+      min-height: calc(100vh - 40px);
+    }
+
+    .header {
+      grid-area: header;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #ffffff;
+      padding: 25px 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header h1 {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .nav {
+      grid-area: nav;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav ul {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav ul li {
+      flex: 1;
+      text-align: center;
+    }
+
+    .nav ul li a {
+      display: block;
+      padding: 12px 15px;
+      text-decoration: none;
+      color: #2a5298;
+      font-weight: 600;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .nav ul li a:hover {
+      background-color: #eef2f7;
+      color: #1e3c72;
+    }
+
+    .content {
+      grid-area: content;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .content h2 {
+      color: #1e3c72;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .content p {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .content code {
+      background-color: #f1f3f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #d63384;
+      font-family: Consolas, monospace;
+    }
+
+    .content .card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #2a5298;
+      padding: 15px 20px;
+      margin-top: 15px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .content .card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #2a5298;
+    }
+
+    .content .card ul {
+      padding-left: 20px;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar h3 {
+      color: #1e3c72;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eef2f7;
+      font-size: 18px;
+    }
+
+    .sidebar-item {
+      margin-bottom: 15px;
+      padding: 12px;
+      background-color: #f8f9fa;
+      border-radius: 6px;
+      border-left: 3px solid #00bcd4;
+    }
+
+    .sidebar-item h4 {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .sidebar-item p {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #1e293b;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 18px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    /* Responsive cho thiết bị di động (Mobile) */
+    @media (max-width: 768px) {
+      .grid-layout {
+        grid-template-areas:
+          "header"
+          "nav"
+          "content"
+          "sidebar"
+          "footer";
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 10px auto;
+      }
+
+      .nav ul {
+        flex-direction: column;
+      }
+
+      .nav ul li {
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .nav ul li:last-child {
+        border-bottom: none;
+      }
+
+      .header h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-layout">
+    <header class="header">
+      <h1>Cổng Thông Tin Công Nghệ & Lập Trình</h1>
+      <p>Bố cục Responsive với CSS Grid Layout</p>
+    </header>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="#news">Tin tức</a></li>
+        <li><a href="#courses">Khóa học</a></li>
+        <li><a href="#tutorials">Hướng dẫn</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2>Bài viết nổi bật: Làm chủ CSS Grid trong năm 2026</h2>
+      <p>CSS Grid Layout là một trong những hệ thống bố cục 2 chiều mạnh mẽ nhất trong thiết kế web hiện đại. Nó cho phép các nhà phát triển chia giao diện thành các cột và hàng một cách trực quan và linh hoạt.</p>
+      
+      <p>Với các thuộc tính như <code>grid-template-areas</code>, <code>grid-template-columns</code>, và <code>gap</code>, việc tạo ra các bố cục trang web phức tạp trở nên dễ dàng và rõ ràng hơn bao giờ hết mà không cần phải dùng nhiều thẻ div bọc lồng nhau.</p>
+      
+      <div class="card">
+        <h3>Ưu điểm của CSS Grid:</h3>
+        <ul>
+          <li>Bố cục 2 chiều (quản lý cả hàng và cột đồng thời).</li>
+          <li>Dễ dàng điều chỉnh responsive bằng Media Queries.</li>
+          <li>Giảm bớt sự phức tạp của mã nguồn so với float hoặc flexbox lồng nhau.</li>
+        </ul>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <h3>Tin mới & Tiện ích</h3>
+      <div class="sidebar-item">
+        <h4>Khóa học Frontend</h4>
+        <p>Lộ trình từ cơ bản đến nâng cao cùng CodeGym.</p>
+      </div>
+      <div class="sidebar-item">
+        <h4>Mẹo lập trình CSS</h4>
+        <p>Tối ưu hóa bố cục với thuộc tính gap và repeat().</p>
+      </div>
+      <div class="sidebar-item">
+        <h4>Tài nguyên học tập</h4>
+        <p>Tài liệu lập trình web HTML5 & CSS3 chuẩn 2026.</p>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <p>&copy; 2026 Bản quyền thuộc về CodeGym | Thiết kế bằng CSS Grid Responsive</p>
+    </footer>
+  </div>
+</body>
+</html>
