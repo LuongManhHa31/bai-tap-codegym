@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layout - Bố cục trang web với CSS Flexbox</title>
+  <link rel="stylesheet" href="Thuc_hanh_bo_cuc_web_flexbox/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">⚡ FlexboxWeb</div>
+        <div class="header-title">
+          <h1>[Thực hành] Bố cục trang web với CSS Flexbox</h1>
+          <p>Thiết kế giao diện chuẩn Responsive cho Desktop và Mobile</p>
+        </div>
+        <div class="status-badge">Responsive Ready</div>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#" class="active">Trang chủ</a></li>
+        <li><a href="#about">Về Flexbox</a></li>
+        <li><a href="#structure">Cấu trúc Layout</a></li>
+        <li><a href="#responsive">Media Queries</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Container: chứa Main Content (flex: 3) và Sidebar (flex: 1) -->
+    <div class="main-container">
+      <!-- Main Content (Chiếm 3 phần) -->
+      <main class="content">
+        <article class="article-box">
+          <h2>🌟 Kiến trúc bố cục với CSS Flexbox</h2>
+          <p class="lead">
+            Bố cục trang web sử dụng <strong>CSS Flexbox</strong> giải quyết hoàn hảo bài toán căn chỉnh, chia tỷ lệ chiều rộng và tự động thích ứng với mọi kích cỡ màn hình thiết bị.
+          </p>
+
+          <div class="cards-grid">
+            <div class="info-card">
+              <span class="icon">📐</span>
+              <h3>1. Container Dọc</h3>
+              <p>Phần tử <code>.container</code> thiết lập <code>flex-direction: column</code> với <code>min-height: 100vh</code> giúp Footer luôn bám đáy trang.</p>
+            </div>
+
+            <div class="info-card">
+              <span class="icon">⚖️</span>
+              <h3>2. Phân chia 3 : 1</h3>
+              <p>Khung <code>.main-container</code> dùng <code>display: flex</code>, trong đó <code>.content (flex: 3)</code> và <code>.sidebar (flex: 1)</code>.</p>
+            </div>
+
+            <div class="info-card">
+              <span class="icon">📱</span>
+              <h3>3. Mobile Responsive</h3>
+              <p>Với <code>@media (max-width: 768px)</code>, <code>.main-container</code> chuyển sang <code>flex-direction: column</code> giúp trải nghiệm trên điện thoại mượt mà.</p>
+            </div>
+          </div>
+
+          <div class="demo-box" id="structure">
+            <h3>🔍 Bảng phân tích tỷ lệ Flexbox</h3>
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>Thành phần</th>
+                  <th>Thuộc tính Flexbox</th>
+                  <th>Tỷ lệ / Tác dụng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>.container</code></td>
+                  <td><code>display: flex; flex-direction: column; min-height: 100vh;</code></td>
+                  <td>Bố cục tổng thể xếp dọc, phủ toàn bộ chiều cao trình duyệt</td>
+                </tr>
+                <tr>
+                  <td><code>.main-container</code></td>
+                  <td><code>display: flex; flex: 1;</code></td>
+                  <td>Hấp thụ toàn bộ khoảng trống còn lại ở giữa Header & Footer</td>
+                </tr>
+                <tr>
+                  <td><code>.content</code></td>
+                  <td><code>flex: 3;</code></td>
+                  <td>Khu vực nội dung chính chiếm 75% chiều rộng</td>
+                </tr>
+                <tr>
+                  <td><code>.sidebar</code></td>
+                  <td><code>flex: 1; background: #f4f4f4;</code></td>
+                  <td>Cột thông tin phụ chiếm 25% chiều rộng</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </main>
+
+      <!-- Sidebar (Chiếm 1 phần) -->
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>📌 Sidebar Widgets</h3>
+          <p>Khu vực hiển thị nội dung phụ trợ, tiện ích và tin tức liên quan.</p>
+        </div>
+
+        <div class="widget">
+          <h4>📱 Trạng thái màn hình</h4>
+          <div class="screen-monitor">
+            <span>Độ rộng hiện tại:</span>
+            <strong id="windowWidth">-- px</strong>
+            <div id="deviceBadge" class="device-tag">Desktop</div>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>🔥 Chủ đề nổi bật</h4>
+          <ul class="widget-list">
+            <li><a href="#">Cách dùng flex: 1 và flex-grow</a></li>
+            <li><a href="#">Sử dụng Media Queries 768px</a></li>
+            <li><a href="#">Kỹ thuật Sticky Header/Footer</a></li>
+            <li><a href="#">So sánh CSS Grid vs Flexbox</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Flexbox Layout Practice - CodeGym Frontend Course</p>
+      <p><small>GitHub: <a href="https://github.com/LuongManhHa31/bai-tap-codegym" target="_blank">bai-tap-codegym</a> | Thiết kế bởi Lương Mạnh Hà</small></p>
+    </footer>
+  </div>
+
+  <script>
+    function updateMonitor() {
+      const width = window.innerWidth;
+      const widthElem = document.getElementById('windowWidth');
+      const badgeElem = document.getElementById('deviceBadge');
+      if (widthElem) widthElem.textContent = `${width}px`;
+      if (badgeElem) {
+        if (width <= 768) {
+          badgeElem.textContent = 'Mobile Layout (Dọc)';
+          badgeElem.className = 'device-tag tag-mobile';
+        } else {
+          badgeElem.textContent = 'Desktop Layout (Ngang)';
+          badgeElem.className = 'device-tag tag-desktop';
+        }
+      }
+    }
+    window.addEventListener('resize', updateMonitor);
+    window.addEventListener('DOMContentLoaded', updateMonitor);
+  </script>
+</body>
+</html>
