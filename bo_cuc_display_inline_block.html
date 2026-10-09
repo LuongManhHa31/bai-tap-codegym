@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục với display - CodeGym</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 30px 20px;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        nav {
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #0284c7;
+            color: #ffffff;
+        }
+
+        section {
+            margin-top: 20px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box {
+            display: inline-block;
+            width: 29%;
+            padding: 20px;
+            background-color: lightblue;
+            margin: 10px;
+            vertical-align: top;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            color: #0369a1;
+        }
+
+        .box p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                display: block;
+                width: 90%;
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bố cục trang web với display</h1>
+    
+    <nav>
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Dịch vụ</a>
+        <a href="#">Liên hệ</a>
+    </nav>
+
+    <section>
+        <div class="box">
+            <h3>Cột 1</h3>
+            <p>Nội dung cột thứ nhất sử dụng display: inline-block.</p>
+        </div>
+        <div class="box">
+            <h3>Cột 2</h3>
+            <p>Nội dung cột thứ hai sử dụng display: inline-block.</p>
+        </div>
+        <div class="box">
+            <h3>Cột 3</h3>
+            <p>Nội dung cột thứ ba sử dụng display: inline-block.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Bản quyền &copy; 2026</p>
+    </footer>
+</body>
+</html>
