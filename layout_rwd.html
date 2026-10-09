@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục trang web Responsive (RWD) - CodeGym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #cbd5e1;
+        }
+
+        .nav {
+            display: flex;
+            background-color: #334155;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background-color: #2563eb;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .col {
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .col-left {
+            flex: 2;
+            min-width: 200px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .col-left h3 {
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+
+        .side-menu {
+            list-style: none;
+        }
+
+        .side-menu li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .side-menu li a {
+            text-decoration: none;
+            color: #2563eb;
+            font-size: 14px;
+            display: block;
+        }
+
+        .col-main {
+            flex: 5;
+            min-width: 300px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .col-main h2 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .card h4 {
+            margin-bottom: 8px;
+            color: #1e3a8a;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .col-right {
+            flex: 2;
+            min-width: 200px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .col-right h3 {
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #cbd5e1;
+        }
+
+        .widget {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .col-left { flex: 3; }
+            .col-main { flex: 7; }
+            .col-right {
+                flex: 100%;
+                display: flex;
+                gap: 15px;
+            }
+            .widget { flex: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .wrapper { margin: 0; border-radius: 0; }
+            .nav { flex-direction: column; }
+            .row { flex-direction: column; padding: 15px; }
+            .col-left, .col-main, .col-right { flex: 100%; width: 100%; }
+            .col-right { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>🌐 Trang Web Chuẩn Responsive (RWD)</h1>
+            <p>Tối ưu hiển thị linh hoạt trên Desktop, Tablet và Mobile</p>
+        </div>
+
+        <div class="nav">
+            <a href="#" class="active">Trang chủ</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Liên hệ</a>
+        </div>
+
+        <div class="row">
+            <div class="col col-left">
+                <h3>Danh Mục Trái</h3>
+                <ul class="side-menu">
+                    <li><a href="#">Khóa học Frontend</a></li>
+                    <li><a href="#">Khóa học Backend</a></li>
+                    <li><a href="#">Fullstack Developer</a></li>
+                    <li><a href="#">Lập trình Mobile</a></li>
+                </ul>
+            </div>
+
+            <div class="col col-main">
+                <h2>Bố Cục Đáp Ứng - Responsive Web Design</h2>
+                <p>Responsive Web Design (RWD) là phương pháp thiết kế giúp trang web tự động thích ứng với nhiều kích thước màn hình khác nhau.</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>📱 Mobile First</h4>
+                        <p>Thiết kế ưu tiên trải nghiệm trên thiết bị di động với tốc độ tải trang nhanh.</p>
+                    </div>
+                    <div class="card">
+                        <h4>📐 Fluid Grid</h4>
+                        <p>Hệ thống lưới tỷ lệ phần trăm linh hoạt thay cho các giá trị px cố định.</p>
+                    </div>
+                    <div class="card">
+                        <h4>🎯 Media Queries</h4>
+                        <p>Quy tắc CSS @media cho phép định hình bố cục khác biệt tại các breakpoints.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-right">
+                <h3>Thông Tin Phụ</h3>
+                <div class="widget"><p><strong>📅 Ngày:</strong> 09/10/2026</p></div>
+                <div class="widget"><p><strong>📢 Thông báo:</strong> Tuyển sinh khóa mới</p></div>
+                <div class="widget"><p><strong>⭐ Đánh giá:</strong> 4.9/5 sao</p></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 CodeGym Internship. Bố cục RWD hoàn thiện bằng DIV và CSS.</p>
+        </div>
+    </div>
+</body>
+</html>
