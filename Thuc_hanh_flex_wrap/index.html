@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] CSS | flex-wrap Property</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1>[Thực hành] CSS | Thuộc tính flex-wrap</h1>
+      <p class="subtitle">Tìm hiểu và so sánh các giá trị: <code>wrap</code>, <code>nowrap</code>, <code>wrap-reverse</code>, <code>initial</code></p>
+    </header>
+
+    <!-- Khu vực tương tác trực tiếp -->
+    <section class="demo-card interactive-section">
+      <h2>1. Thử nghiệm trực tiếp (Interactive Demo)</h2>
+      <p>Nhấp vào các nút dưới đây để thay đổi giá trị <code>flex-wrap</code> trên container:</p>
+      
+      <div class="btn-group">
+        <button class="btn active" onclick="setWrap('wrap', this)">flex-wrap: wrap</button>
+        <button class="btn" onclick="setWrap('nowrap', this)">flex-wrap: nowrap</button>
+        <button class="btn" onclick="setWrap('wrap-reverse', this)">flex-wrap: wrap-reverse</button>
+        <button class="btn" onclick="setWrap('initial', this)">flex-wrap: initial</button>
+      </div>
+
+      <div class="demo-box">
+        <div id="liveContainer" class="container wrap">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+        </div>
+      </div>
+      <p id="statusText" class="status-note">Đang áp dụng: <strong>flex-wrap: wrap</strong> (Các phần tử tự động xuống dòng khi không đủ chiều rộng 500px).</p>
+    </section>
+
+    <!-- Khu vực so sánh trực quan cả 4 giá trị -->
+    <section class="demo-card">
+      <h2>2. So sánh trực quan 4 trường hợp</h2>
+      
+      <div class="grid-comparisons">
+        <!-- wrap -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: wrap</h3>
+          <p class="desc">Cho phép các phần tử bọc xuống dòng khi không đủ chỗ.</p>
+          <div class="container wrap mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <!-- nowrap -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: nowrap (Mặc định)</h3>
+          <p class="desc">Bắt buộc tất cả phần tử nằm trên 1 dòng duy nhất.</p>
+          <div class="container nowrap mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <!-- wrap-reverse -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: wrap-reverse</h3>
+          <p class="desc">Xuống dòng nhưng đảo ngược hướng trục Cross Axis (dưới lên trên).</p>
+          <div class="container wrap-reverse mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <!-- initial -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: initial</h3>
+          <p class="desc">Khôi phục về giá trị mặc định của CSS (tương đương nowrap).</p>
+          <div class="container initial mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function setWrap(value, btn) {
+      const container = document.getElementById('liveContainer');
+      const statusText = document.getElementById('statusText');
+      
+      container.className = 'container ' + value;
+      
+      document.querySelectorAll('.btn-group .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const explanations = {
+        'wrap': 'Đang áp dụng: <strong>flex-wrap: wrap</strong> (Các phần tử xuống dòng khi không đủ chỗ theo hướng thông thường).',
+        'nowrap': 'Đang áp dụng: <strong>flex-wrap: nowrap</strong> (Tất cả phần tử giữ nguyên trên 1 dòng, không xuống dòng).',
+        'wrap-reverse': 'Đang áp dụng: <strong>flex-wrap: wrap-reverse</strong> (Xuống dòng nhưng đảo ngược thứ tự các dòng theo trục cross axis).',
+        'initial': 'Đang áp dụng: <strong>flex-wrap: initial</strong> (Trả về giá trị mặc định của CSS, tương đương nowrap).'
+      };
+      statusText.innerHTML = explanations[value];
+    }
+  </script>
+</body>
+</html>

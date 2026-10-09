@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] CSS | flex-wrap Property</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      padding: 25px 20px;
+      line-height: 1.5;
+    }
+
+    .page-container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      color: #1e3c72;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .subtitle code {
+      background-color: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #d63384;
+    }
+
+    .demo-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .demo-card h2 {
+      font-size: 19px;
+      color: #2c3e50;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #eef2f7;
+      padding-bottom: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 15px 0 20px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border: 1px solid #2a5298;
+      background-color: #f8fafc;
+      color: #2a5298;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #e2e8f0;
+    }
+
+    .btn.active {
+      background-color: #2a5298;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(42, 82, 152, 0.3);
+    }
+
+    .demo-box {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    /* Base Container */
+    .container {
+      display: flex;
+      width: 500px;
+      gap: 10px;
+      border: 2px dashed #475569;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 6px;
+    }
+
+    .container.wrap {
+      flex-wrap: wrap;
+    }
+
+    .container.nowrap {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .container.wrap-reverse {
+      flex-wrap: wrap-reverse;
+      height: 200px;
+    }
+
+    .container.initial {
+      flex-wrap: initial;
+      overflow-x: auto;
+    }
+
+    /* Item Styling */
+    .item {
+      width: 140px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #90caf9;
+      color: #0d47a1;
+      font-weight: bold;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+    }
+
+    .wrap-reverse .item {
+      background-color: #f48fb1;
+      color: #880e4f;
+    }
+
+    .nowrap .item {
+      background-color: #a5d6a7;
+      color: #1b5e20;
+    }
+
+    .initial .item {
+      background-color: #ffe082;
+      color: #e65100;
+    }
+
+    .status-note {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #e8f4fd;
+      border-left: 4px solid #2196f3;
+      color: #0d47a1;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    /* 4-way visual comparison grid */
+    .grid-comparisons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .comparison-item {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .comparison-item h3 {
+      font-size: 16px;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+
+    .comparison-item .desc {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 12px;
+      min-height: 38px;
+    }
+
+    .container.mini {
+      width: 100%;
+      max-width: 400px;
+      height: 160px;
+    }
+
+    .container.mini .item {
+      width: 110px;
+      height: 50px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-comparisons {
+        grid-template-columns: 1fr;
+      }
+      
+      .container {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1>[Thực hành] CSS | Thuộc tính flex-wrap</h1>
+      <p class="subtitle">Tìm hiểu và so sánh các giá trị: <code>wrap</code>, <code>nowrap</code>, <code>wrap-reverse</code>, <code>initial</code></p>
+    </header>
+
+    <!-- Khu vực tương tác trực tiếp -->
+    <section class="demo-card interactive-section">
+      <h2>1. Thử nghiệm trực tiếp (Interactive Demo)</h2>
+      <p>Nhấp vào các nút dưới đây để thay đổi giá trị <code>flex-wrap</code> trên container:</p>
+      
+      <div class="btn-group">
+        <button class="btn active" onclick="setWrap('wrap', this)">flex-wrap: wrap</button>
+        <button class="btn" onclick="setWrap('nowrap', this)">flex-wrap: nowrap</button>
+        <button class="btn" onclick="setWrap('wrap-reverse', this)">flex-wrap: wrap-reverse</button>
+        <button class="btn" onclick="setWrap('initial', this)">flex-wrap: initial</button>
+      </div>
+
+      <div class="demo-box">
+        <div id="liveContainer" class="container wrap">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+        </div>
+      </div>
+      <p id="statusText" class="status-note">Đang áp dụng: <strong>flex-wrap: wrap</strong> (Các phần tử tự động xuống dòng khi không đủ chiều rộng 500px).</p>
+    </section>
+
+    <!-- Khu vực so sánh trực quan cả 4 giá trị -->
+    <section class="demo-card">
+      <h2>2. So sánh trực quan 4 trường hợp</h2>
+      
+      <div class="grid-comparisons">
+        <!-- wrap -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: wrap</h3>
+          <p class="desc">Cho phép các phần tử bọc xuống dòng khi không đủ chỗ.</p>
+          <div class="container wrap mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <!-- nowrap -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: nowrap (Mặc định)</h3>
+          <p class="desc">Bắt buộc tất cả phần tử nằm trên 1 dòng duy nhất.</p>
+          <div class="container nowrap mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <!-- wrap-reverse -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: wrap-reverse</h3>
+          <p class="desc">Xuống dòng nhưng đảo ngược hướng trục Cross Axis (dưới lên trên).</p>
+          <div class="container wrap-reverse mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+
+        <!-- initial -->
+        <div class="comparison-item">
+          <h3>🔹 flex-wrap: initial</h3>
+          <p class="desc">Khôi phục về giá trị mặc định của CSS (tương đương nowrap).</p>
+          <div class="container initial mini">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function setWrap(value, btn) {
+      const container = document.getElementById('liveContainer');
+      const statusText = document.getElementById('statusText');
+      
+      container.className = 'container ' + value;
+      
+      document.querySelectorAll('.btn-group .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const explanations = {
+        'wrap': 'Đang áp dụng: <strong>flex-wrap: wrap</strong> (Các phần tử xuống dòng khi không đủ chỗ theo hướng thông thường).',
+        'nowrap': 'Đang áp dụng: <strong>flex-wrap: nowrap</strong> (Tất cả phần tử giữ nguyên trên 1 dòng, không xuống dòng).',
+        'wrap-reverse': 'Đang áp dụng: <strong>flex-wrap: wrap-reverse</strong> (Xuống dòng nhưng đảo ngược thứ tự các dòng theo trục cross axis).',
+        'initial': 'Đang áp dụng: <strong>flex-wrap: initial</strong> (Trả về giá trị mặc định của CSS, tương đương nowrap).'
+      };
+      statusText.innerHTML = explanations[value];
+    }
+  </script>
+</body>
+</html>
