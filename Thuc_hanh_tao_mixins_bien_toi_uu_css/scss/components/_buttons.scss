@@ -1,0 +1,8 @@
+// components/_buttons.scss
+.button {
+  @include button-style($primary-color);
+
+  &--blue {
+    @include button-style(#2563eb);
+  }
+}

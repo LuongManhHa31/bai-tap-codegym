@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] Tạo mixins & biến để tối ưu CSS của website mẫu</title>
+  <!-- Nhúng file CSS được biên dịch từ SASS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div style="max-width: 800px; margin: 0 auto;">
+    
+    <header style="margin-bottom: 30px;">
+      <h1>Tối Ưu Hóa CSS Bằng SASS</h1>
+      <h2>Thực hành Mixins, Variables &amp; Partials</h2>
+      <p style="color: #64748b; margin-top: 8px;">
+        Giảm thiểu lặp code bằng cách định nghĩa biến toàn cục và tái sử dụng mixin cho nút bấm &amp; thẻ card.
+      </p>
+    </header>
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <h2>Thẻ Card 1 (Áp dụng @include box-style)</h2>
+      <p style="color: #475569; margin-bottom: 15px;">
+        Thẻ này thừa hưởng kiểu dáng đổ bóng, padding và bo góc từ mixin <code>box-style</code>.
+      </p>
+      <button class="button">Nút màu đỏ ($primary-color)</button>
+      <button class="button button--blue" style="margin-left: 10px;">Nút màu xanh</button>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <h2>Thẻ Card 2: Lợi ích của biến SASS</h2>
+      <p style="color: #475569; margin-bottom: 15px;">
+        Khi cần thay đổi màu chủ đạo hay kích thước font chữ trên toàn website, lập trình viên chỉ cần sửa đổi 1 dòng duy nhất trong <code>abstracts/_variables.scss</code>.
+      </p>
+      <a href="styles_before.css" class="button button--blue" target="_blank">Xem CSS gốc trước tối ưu</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

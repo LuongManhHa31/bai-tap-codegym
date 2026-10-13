@@ -1,0 +1,26 @@
+// base/_typography.scss
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  background-color: $body-bg;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: $font-large;
+  color: $text-color;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: $font-medium;
+  color: $text-color;
+  margin-bottom: 10px;
+}
