@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple web Development Template</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar background">
+    <ul class="nav-list">
+      <div class="logo">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="logo">
+      </div>
+      <li><a href="#web">Web Technology</a></li>
+      <li><a href="#program">C Programming</a></li>
+      <li><a href="#course">Java</a></li>
+      <li><a href="#python">Python</a></li>
+    </ul>
+    <div class="rightNav">
+      <input type="text" name="search" id="search" placeholder="Search...">
+      <button class="btn btn-sm">Search</button>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: WEB TECHNOLOGY -->
+  <section class="firstsection">
+    <div class="box-main">
+      <div class="firstHalf">
+        <h1 class="text-big" id="web">Web Technology</h1>
+        <p class="text-small">
+          HTML stands for HyperText Markup Language. It is used to design web pages using a markup language. HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages. A markup language is used to define the text document within tag which defines the structure of web pages. HTML is a markup language that is used by the browser to manipulate text, images, and other content to display it in the required format.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: C PROGRAMMING -->
+  <section class="secondsection">
+    <div class="box-main">
+      <div class="secondHalf">
+        <h1 class="text-big" id="program">C Programming</h1>
+        <p class="text-small">
+          C is a procedural programming language. It was initially developed by Dennis Ritchie as a system programming language to write operating system. The main features of C language include low-level access to memory, simple set of keywords, and clean style, these features make C language suitable for system programming like operating system or compiler development.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: JAVA (ẢNH NẰM BÊN PHẢI) -->
+  <section class="section" id="course">
+    <div class="paras">
+      <h1 class="sectionTag text-big">Java</h1>
+      <p class="sectionSubTag text-small">
+        Java has been one of the most popular programming language for many years. Java is Object Oriented. However it is not considered as pure object oriented as it provides support for primitive data types (like int, char, etc). The Java codes are first compiled into byte code (machine independent code). Then the byte code is run on Java Virtual Machine (JVM) regardless of the underlying architecture.
+      </p>
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" alt="laptop image">
+    </div>
+  </section>
+
+  <!-- SECTION 4: PYTHON (ẢNH NẰM BÊN TRÁI - SỬ DỤNG flex-direction: row-reverse) -->
+  <section class="section section-Left" id="python">
+    <div class="paras">
+      <h1 class="sectionTag text-big">Python</h1>
+      <p class="sectionSubTag text-small">
+        Python is an interpreted, high-level and general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.
+      </p>
+    </div>
+    <div class="thumbnail">
+      <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" alt="python code image">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="background">
+    <p class="text-footer">
+      Copyright &copy; 2026 - All rights are reserved | CodeGym Frontend (Lương Mạnh Hà)
+    </p>
+  </footer>
+
+</body>
+</html>
