@@ -1,0 +1,29 @@
+// abstracts/_variables.scss
+
+// 1. Bảng màu giao diện
+$primary-color: #2563eb;
+$primary-hover: #1d4ed8;
+$accent-color: #f59e0b;
+$dark-color: #0f172a;
+$header-bg: #1e293b;
+$light-bg: #f8fafc;
+$card-bg: #ffffff;
+$text-main: #334155;
+$text-muted: #64748b;
+$text-light: #ffffff;
+$border-color: #e2e8f0;
+
+// 2. Kích thước & Khoảng cách
+$container-max-width: 1200px;
+$border-radius-sm: 6px;
+$border-radius-md: 12px;
+$border-radius-lg: 16px;
+
+// 3. Breakpoints Responsive
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 992px;
+
+// 4. Bóng đổ (Shadows)
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);

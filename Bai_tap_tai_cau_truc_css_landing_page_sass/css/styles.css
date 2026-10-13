@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #334155;
+  background-color: #f8fafc;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn:hover {
+  background-color: rgb(7.619047619%, 31.2380952381%, 83.0476190476%);
+  transform: translateY(-2px);
+}
+.btn--outline {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.btn--outline:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+.btn--accent {
+  display: inline-block;
+  background-color: #f59e0b;
+  color: #0f172a;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn--accent:hover {
+  background-color: rgb(81.069631002%, 52.1636560136%, 3.3225258607%);
+  transform: translateY(-2px);
+}
+
+.site-header {
+  background-color: #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+.site-header .header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.site-header .brand-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+}
+.site-header .brand-logo span {
+  color: #2563eb;
+}
+.site-header .nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+.site-header .nav-menu li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.site-header .nav-menu li a:hover, .site-header .nav-menu li a.active {
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .site-header .nav-menu {
+    display: none;
+  }
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 90px 20px;
+}
+.hero-banner h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-banner p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+.featured-products {
+  padding: 80px 0;
+}
+.featured-products .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.featured-products .section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+.featured-products .section-title p {
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.featured-products .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.featured-products .product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.featured-products .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.featured-products .product-card .product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.featured-products .product-card .product-body {
+  padding: 24px;
+}
+.featured-products .product-card .product-body .product-tag {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 8px;
+  display: block;
+}
+.featured-products .product-card .product-body h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+.featured-products .product-card .product-body p {
+  color: #64748b;
+  font-size: 14.5px;
+  margin-bottom: 18px;
+}
+.featured-products .product-card .product-body .product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+.featured-products .product-card .product-body .product-footer .price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.statistics-section {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  padding: 70px 0;
+  text-align: center;
+}
+.statistics-section .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+.statistics-section .stat-item {
+  padding: 20px;
+}
+.statistics-section .stat-item .stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.statistics-section .stat-item .stat-label {
+  font-size: 1.1rem;
+  color: #bfdbfe;
+  font-weight: 500;
+}
+
+.site-footer {
+  background-color: #0f172a;
+  color: #64748b;
+  padding: 60px 0 30px;
+}
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+@media (max-width: 992px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.site-footer .footer-col h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.site-footer .footer-col p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.site-footer .footer-col .footer-links {
+  list-style: none;
+}
+.site-footer .footer-col .footer-links li {
+  margin-bottom: 10px;
+}
+.site-footer .footer-col .footer-links li a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.site-footer .footer-col .footer-links li a:hover {
+  color: #ffffff;
+}
+.site-footer .footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #1e293b;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/*# sourceMappingURL=styles.css.map */

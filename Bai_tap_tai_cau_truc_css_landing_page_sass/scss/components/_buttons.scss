@@ -1,0 +1,20 @@
+// components/_buttons.scss
+
+.btn {
+  @include button-base($primary-color);
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $text-light;
+    color: $text-light;
+
+    &:hover {
+      background-color: $text-light;
+      color: $dark-color;
+    }
+  }
+
+  &--accent {
+    @include button-base($accent-color, $dark-color);
+  }
+}

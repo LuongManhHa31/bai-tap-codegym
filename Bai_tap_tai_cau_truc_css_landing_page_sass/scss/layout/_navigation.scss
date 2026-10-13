@@ -1,0 +1,71 @@
+// layout/_navigation.scss
+
+.site-header {
+  background-color: $header-bg;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: $shadow-md;
+
+  .header-inner {
+    @include flex-between;
+    padding: 16px 0;
+  }
+
+  .brand-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: $text-light;
+    text-decoration: none;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+
+    li a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &.active {
+        color: $text-light;
+      }
+    }
+
+    @include mobile {
+      display: none; // Co gọn trên di động
+    }
+  }
+}
+
+// Hero banner bên dưới header
+.hero-banner {
+  background: linear-gradient(135deg, $dark-color 0%, #1e3a8a 100%);
+  color: $text-light;
+  text-align: center;
+  padding: 90px 20px;
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto 30px;
+  }
+}

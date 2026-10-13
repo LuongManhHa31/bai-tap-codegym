@@ -1,0 +1,62 @@
+// layout/_footer.scss
+
+.site-footer {
+  background-color: $dark-color;
+  color: $text-muted;
+  padding: 60px 0 30px;
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-col {
+    h4 {
+      color: $text-light;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          color: $text-muted;
+          text-decoration: none;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $text-light;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #1e293b;
+    font-size: 14px;
+    color: #64748b;
+  }
+}

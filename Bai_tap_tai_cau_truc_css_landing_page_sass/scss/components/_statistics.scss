@@ -1,0 +1,32 @@
+// components/_statistics.scss
+
+.statistics-section {
+  background: linear-gradient(135deg, $primary-color 0%, #1d4ed8 100%);
+  color: $text-light;
+  padding: 70px 0;
+  text-align: center;
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .stat-item {
+    padding: 20px;
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 10px;
+      color: $text-light;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #bfdbfe;
+      font-weight: 500;
+    }
+  }
+}
