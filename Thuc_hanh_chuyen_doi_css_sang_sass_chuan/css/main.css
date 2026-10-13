@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333333;
+  background: #f4f4f4;
+  line-height: 1.6;
+  padding: 40px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.button--secondary {
+  background: #10b981;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.button--secondary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+.card__title {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #2563eb;
+}
+.card__text {
+  margin-bottom: 16px;
+  color: #4b5563;
+}
+
+/*# sourceMappingURL=main.css.map */

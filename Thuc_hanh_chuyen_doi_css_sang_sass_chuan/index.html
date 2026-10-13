@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] Chuyển đổi CSS có sẵn sang SASS theo chuẩn</title>
+  <!-- Nhúng file CSS được biên dịch từ SASS (main.scss -> main.css) -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <header style="margin-bottom: 30px; text-align: center;">
+      <h1 style="color: #2563eb; margin-bottom: 8px;">[Thực hành] Chuyển đổi CSS sang SASS Chuẩn</h1>
+      <p style="color: #6b7280;">Tổ chức mã nguồn theo mô hình 7-1 pattern (abstracts, base, layout, components)</p>
+    </header>
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <h2 class="card__title">Card 1: Khóa học SASS Cơ Bản</h2>
+      <p class="card__text">
+        Chuyển đổi CSS truyền thống thành SASS giúp tái sử dụng các biến ($variables), gom nhóm các đoạn code thường dùng bằng Mixin (@mixin) và tạo cấu trúc phân cấp trực quan với Nesting.
+      </p>
+      <button class="button">Đăng Ký Ngay</button>
+      <button class="button button--secondary" style="margin-left: 10px;">Xem Chi Tiết</button>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <h2 class="card__title">Card 2: Cấu trúc thư mục chuẩn SASS</h2>
+      <p class="card__text">
+        Mã nguồn được phân tách khoa học thành các thư mục:
+        <br>• <strong>abstracts/</strong>: Chứa _variables.scss và _mixins.scss
+        <br>• <strong>base/</strong>: Chứa _global.scss
+        <br>• <strong>layout/</strong>: Chứa _container.scss
+        <br>• <strong>components/</strong>: Chứa _buttons.scss và _cards.scss
+        <br>• <strong>main.scss</strong>: Tập hợp tất cả các partials để biên dịch ra css/main.css.
+      </p>
+      <a href="styles_original.css" class="button" target="_blank">Xem File CSS Gốc</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
