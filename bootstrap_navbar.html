@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực hành] Tạo Navbar với Bootstrap</title>
+  <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .demo-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: #ffffff;
+      padding: 60px 0;
+      margin-bottom: 40px;
+    }
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      height: 100%;
+    }
+    .badge-code {
+      font-family: monospace;
+      background-color: #e2e8f0;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BƯỚC 2: THANH ĐIỀU HƯỚNG BOOTSTRAP NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container-fluid">
+      <!-- Thương hiệu (Logo/Brand) -->
+      <a class="navbar-brand fw-bold" href="#">
+        <span class="text-primary me-1">⚡</span>MyWebsite
+      </a>
+
+      <!-- Nút Toggler mở menu trên thiết bị di động -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Danh sách liên kết điều hướng (Collapse menu) -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <!-- Mục Dropdown có menu con -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#web-design">Web Design</a></li>
+              <li><a class="dropdown-item" href="#seo">SEO</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#custom-dev">Custom Development</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Form tìm kiếm bổ sung -->
+        <form class="d-flex" role="search" onsubmit="event.preventDefault();">
+          <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Tìm</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PHẦN NỘI DUNG MINH HỌA -->
+  <header class="demo-hero text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-3">Thực Hành Bootstrap 5 Navbar</h1>
+      <p class="lead text-light opacity-75 col-lg-8 mx-auto">
+        Thanh điều hướng chuyên nghiệp được xây dựng bằng Bootstrap 5.3.0, hỗ trợ hiển thị linh hoạt trên cả máy tính (Desktop) và di động (Mobile).
+      </p>
+      <div class="d-flex justify-content-center gap-2 mt-4">
+        <span class="badge bg-primary px-3 py-2 fs-6">Bootstrap 5.3.0</span>
+        <span class="badge bg-success px-3 py-2 fs-6">Responsive Navbar</span>
+        <span class="badge bg-info text-dark px-3 py-2 fs-6">Dropdown Menu</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Cột 1: Giải thích cấu trúc -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h3 class="h5 fw-bold text-dark mb-3">1. Cấu trúc Thanh điều hướng</h3>
+          <p class="text-secondary">
+            Sử dụng lớp <span class="badge-code">navbar-expand-lg</span> giúp thanh điều hướng tự động trải ngang trên màn hình lớn (&ge; 992px) và co lại thành menu Hamburger trên màn hình nhỏ.
+          </p>
+          <ul class="text-secondary small mb-0">
+            <li><span class="badge-code">navbar-dark bg-dark</span>: Giao diện nền tối sang trọng.</li>
+            <li><span class="badge-code">container-fluid</span>: Tràn viền toàn bộ chiều ngang.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cột 2: Tính năng Dropdown -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h3 class="h5 fw-bold text-dark mb-3">2. Menu thả xuống (Dropdown)</h3>
+          <p class="text-secondary">
+            Mục <strong class="text-dark">Services</strong> sử dụng thuộc tính <span class="badge-code">data-bs-toggle="dropdown"</span> cho phép người dùng mở danh sách dịch vụ con nhanh chóng.
+          </p>
+          <ul class="text-secondary small mb-0">
+            <li>Web Design</li>
+            <li>SEO</li>
+            <li>Custom Development</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cột 3: Tương thích Mobile -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h3 class="h5 fw-bold text-dark mb-3">3. Kiểm tra Responsive Mobile</h3>
+          <p class="text-secondary">
+            Bấm phím <strong>F12</strong> hoặc thu nhỏ kích thước trình duyệt dưới <strong>992px</strong> để kiểm tra:
+          </p>
+          <ul class="text-secondary small mb-0">
+            <li>Nút biểu tượng 3 gạch (<span class="badge-code">navbar-toggler-icon</span>) xuất hiện.</li>
+            <li>Bấm vào nút sẽ trượt mở toàn bộ danh sách menu điều hướng.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-5 border-top border-secondary">
+    <div class="container">
+      <p class="mb-0 text-secondary">&copy; 2026 MyWebsite. Bài tập thực hành Codegym - Lương Mạnh Hà.</p>
+    </div>
+  </footer>
+
+  <!-- Nhúng Bootstrap 5.3.0 JavaScript Bundle từ CDN trước thẻ đóng body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
