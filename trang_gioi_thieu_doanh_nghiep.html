@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới Thiệu Công Ty</title>
+  <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .hero-banner {
+      background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+      padding: 80px 20px;
+    }
+    .service-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+    .icon-box {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .contact-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 30px;
+      display: inline-block;
+      max-width: 500px;
+      width: 100%;
+      border: 1px solid #dee2e6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BƯỚC 2.2: TẠO NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Doanh Nghiệp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Về Chúng Tôi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Dịch Vụ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BƯỚC 2.3: HERO SECTION -->
+  <header class="bg-primary text-white text-center py-5 hero-banner">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Chào mừng đến với Công Ty Chúng Tôi</h1>
+      <p class="lead mb-4">Chúng tôi cung cấp các giải pháp chuyên nghiệp cho doanh nghiệp của bạn</p>
+      <a href="#services" class="btn btn-light btn-lg px-4 fw-semibold shadow-sm">Tìm Hiểu Ngay</a>
+    </div>
+  </header>
+
+  <!-- BƯỚC 2.4: ABOUT SECTION -->
+  <section id="about" class="container py-5">
+    <h2 class="text-center mb-3 fw-bold">Về Chúng Tôi</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <p class="lead text-secondary">
+          Công ty chúng tôi chuyên cung cấp các dịch vụ công nghệ, thiết kế website và tiếp thị kỹ thuật số.
+        </p>
+        <p class="text-muted">
+          Với đội ngũ kỹ sư tài năng, sáng tạo và nhiều năm kinh nghiệm thực chiến, chúng tôi cam kết mang lại những sản phẩm số chất lượng vượt trội, giúp đối tác bứt phá doanh thu và khẳng định vị thế thương hiệu trên thị trường.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BƯỚC 2.5: SERVICES SECTION -->
+  <section id="services" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-2 fw-bold">Dịch vụ của chúng tôi</h2>
+      <p class="text-center text-muted mb-5">Các gói giải pháp toàn diện được tối ưu cho từng doanh nghiệp</p>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="card p-3 h-100 service-card bg-white">
+            <div class="card-body">
+              <div class="icon-box">💻</div>
+              <h3 class="h4 card-title fw-bold">Thiết kế Website</h3>
+              <p class="card-text text-secondary">Thiết kế giao diện chuyên nghiệp và tối ưu hóa trải nghiệm người dùng.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="card p-3 h-100 service-card bg-white">
+            <div class="card-body">
+              <div class="icon-box">🚀</div>
+              <h3 class="h4 card-title fw-bold">Marketing Online</h3>
+              <p class="card-text text-secondary">Giải pháp tiếp thị số giúp doanh nghiệp của bạn phát triển.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="card p-3 h-100 service-card bg-white">
+            <div class="card-body">
+              <div class="icon-box">🎧</div>
+              <h3 class="h4 card-title fw-bold">Hỗ trợ khách hàng</h3>
+              <p class="card-text text-secondary">Chúng tôi cam kết hỗ trợ khách hàng 24/7.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BƯỚC 2.6: CONTACT SECTION -->
+  <section id="contact" class="container py-5 text-center">
+    <h2 class="fw-bold mb-4">Liên hệ với chúng tôi</h2>
+    <div class="contact-card shadow-sm mx-auto">
+      <p class="fs-5 mb-2">✉️ <strong>Email:</strong> <a href="mailto:contact@company.com" class="text-decoration-none text-primary">contact@company.com</a></p>
+      <p class="fs-5 mb-0">📞 <strong>Hotline:</strong> <a href="tel:0988123456" class="text-decoration-none text-success">0988 123 456</a></p>
+    </div>
+  </section>
+
+  <!-- BƯỚC 2.7: TẠO FOOTER -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 Công Ty Chúng Tôi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Nhúng Bootstrap 5.3.0 JS Bundle từ CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
