@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Thực Hành] Hướng dẫn cài đặt SASS bằng npm & SASS CLI</title>
+  <!-- Nhúng file CSS được biên dịch từ SASS (styles.scss -> styles.css) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header class="header">
+      <h1>[Thực Hành] Cài Đặt SASS bằng npm &amp; SASS CLI</h1>
+      <p>Biên dịch tệp SCSS sang CSS hiện đại, chế độ tự động theo dõi (--watch) và quản lý dự án với SASS CLI</p>
+    </header>
+
+    <!-- FEATURE GRID -->
+    <main class="feature-grid">
+      
+      <!-- Card 1 -->
+      <div class="feature-card">
+        <div class="icon-badge">⚡</div>
+        <h3>1. Kiểm tra &amp; Cài đặt SASS</h3>
+        <p>Cài đặt SASS toàn cục nhanh chóng thông qua npm và xác nhận phiên bản hoạt động:</p>
+        <code>npm install -g sass</code><br><br>
+        <code>sass --version</code>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feature-card">
+        <div class="icon-badge">📁</div>
+        <h3>2. Biên dịch đơn tệp SCSS</h3>
+        <p>Biên dịch trực tiếp từ file SCSS sang CSS sẵn sàng nhúng vào website:</p>
+        <code>sass scss/styles.scss css/styles.css</code>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feature-card">
+        <div class="icon-badge">🔄</div>
+        <h3>3. Chế độ theo dõi (--watch)</h3>
+        <p>Tự động phát hiện thay đổi và biên dịch ngay lập tức khi lưu file:</p>
+        <code>sass scss/styles.scss css/styles.css --watch</code>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="feature-card">
+        <div class="icon-badge">📦</div>
+        <h3>4. Biên dịch theo thư mục</h3>
+        <p>Biên dịch toàn bộ các file trong thư mục đầu vào sang thư mục đầu ra:</p>
+        <code>sass scss/:css/ --watch</code>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="feature-card">
+        <div class="icon-badge">🎨</div>
+        <h3>5. Tính năng SCSS áp dụng</h3>
+        <p>Trang web này được định kiểu bằng SCSS sử dụng Biến ($variables), Mixin (@mixin) và Cấu trúc lồng nhau (Nesting).</p>
+        <code>$primary-color: #4f46e5;</code>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="feature-card">
+        <div class="icon-badge">🚀</div>
+        <h3>6. Trạng thái thực thi</h3>
+        <p>Node.js: <strong>v24.21.0</strong> | npm: <strong>11.19.0</strong> | SASS CLI: <strong>v1.105.1</strong>.</p>
+        <a href="#demo" class="btn-primary">Kiểm tra kết quả &rarr;</a>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2026 CodeGym Frontend - [Thực Hành] Cài đặt SASS bằng npm &amp; SASS CLI (Lương Mạnh Hà).</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
