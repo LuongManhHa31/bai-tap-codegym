@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Bài tập] Tái cấu trúc mã CSS cho sẵn (Responsive Grid với SASS)</title>
+  <!-- Nhúng file CSS được biên dịch từ SASS (main.scss -> styles.css) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- LỚP GIAO DIỆN CHÍNH (ĐÃ ĐƯỢC TÁI CẤU TRÚC HOÀN TOÀN TỪ INLINE STYLE SANG SCSS) -->
+  <div class="layout-container">
+    <div class="gridcontainer">
+      
+      <!-- 1. HÀNG HEADER (CHIỀU CAO 90PX, NỀN TÍM) -->
+      <div class="gridwrapper gridwrapper--header">
+        <div class="gridcontent gridcontent--full gridcontent--header"></div>
+      </div>
+
+      <!-- 2. HÀNG NỘI DUNG CHÍNH (CHIỀU CAO 230PX: CỘT MENU 25%, 6 CỘT TRỐNG, CỘT NỘI DUNG 25%) -->
+      <div class="gridwrapper gridwrapper--body">
+        <!-- Cột Menu bên trái (Chiếm 25% = 3/12 cột) -->
+        <div class="gridcontent gridcontent--sidebar">
+          <div class="menu-item"></div>
+          <div class="menu-item"></div>
+          <div class="menu-item"></div>
+          <div class="menu-item"></div>
+        </div>
+
+        <!-- 6 cột khoảng đệm ở giữa (Mỗi cột chiếm 8.33%) -->
+        <div class="gridcontent gridcontent--spacer"></div>
+        <div class="gridcontent gridcontent--spacer"></div>
+        <div class="gridcontent gridcontent--spacer"></div>
+        <div class="gridcontent gridcontent--spacer"></div>
+        <div class="gridcontent gridcontent--spacer"></div>
+        <div class="gridcontent gridcontent--spacer"></div>
+
+        <!-- Cột nội dung bên phải (Chiếm 25% = 3/12 cột) -->
+        <div class="gridcontent gridcontent--sidebar">
+          <div class="content-block"></div>
+        </div>
+      </div>
+
+      <!-- 3. HÀNG FOOTER (CHIỀU CAO 50PX, NỀN XANH DƯƠNG) -->
+      <div class="gridwrapper gridwrapper--footer">
+        <div class="gridcontent gridcontent--full gridcontent--footer"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. LỚP ĐƯỜNG GIÓNG HỆ THỐNG 12 CỘT MỜ ĐỂ KIỂM TRA RESPONSIVE GRID -->
+  <div class="gridcontainer guidelines-container">
+    <div class="gridwrapper gridwrapper--guidelines">
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+      <div class="gridcontent gridcontent--guideline-col"></div>
+    </div>
+  </div>
+
+  <!-- GHI CHÚ RESPONSIVE -->
+  <p class="responsive-note">
+    💡 <strong>Hướng dẫn kiểm tra:</strong> Hãy co giãn kích thước cửa sổ trình duyệt (hoặc nhấn F12) để quan sát hệ thống lưới 12 cột tự động thích ứng với 100% không gian hiển thị có sẵn.
+  </p>
+
+</body>
+</html>

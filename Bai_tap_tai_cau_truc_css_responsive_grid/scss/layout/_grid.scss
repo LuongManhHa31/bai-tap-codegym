@@ -1,0 +1,98 @@
+// layout/_grid.scss
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+// Lớp cha chứa toàn bộ layout
+.layout-container {
+  position: absolute;
+  opacity: 0.9;
+  left: 8px;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+}
+
+.gridcontainer {
+  width: 100%;
+}
+
+.gridwrapper {
+  overflow: auto;
+  position: relative;
+  @include clearfix;
+
+  &--header {
+    height: $header-height;
+  }
+
+  &--body {
+    height: $body-height;
+  }
+
+  &--footer {
+    height: $footer-height;
+  }
+
+  &--guidelines {
+    height: $guideline-height;
+  }
+}
+
+// Cột cơ sở 1/12 (8.33%)
+.gridcontent {
+  width: $column-width;
+  margin: 0;
+  border-right: 1px solid $grid-line-color;
+  height: 100%;
+  float: left;
+  background-color: #f1f1f1;
+
+  &--full {
+    width: 100%;
+    border-right-color: transparent;
+  }
+
+  &--header {
+    background-color: $header-bg;
+  }
+
+  &--footer {
+    background-color: $footer-bg;
+  }
+
+  &--sidebar {
+    @include col-span(3); // 25% (3/12 cột)
+    background-color: $white;
+    border: none;
+    padding-top: 15px;
+  }
+
+  &--spacer {
+    background-color: $white;
+    border: none;
+  }
+
+  &--guideline-col {
+    background-color: $white;
+    border-right: 1px solid $guideline-color;
+
+    &:first-child {
+      border-left: 1px solid $guideline-color;
+    }
+  }
+}
+
+// Hàng hiển thị các đường gióng cột (12 cột mờ)
+.guidelines-container {
+  opacity: 0.15;
+  margin-top: 0;
+}

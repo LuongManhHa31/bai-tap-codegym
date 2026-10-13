@@ -1,0 +1,6 @@
+// main.scss - File chính tổng hợp toàn bộ các partials SASS
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "layout/grid";
+@import "components/widgets";

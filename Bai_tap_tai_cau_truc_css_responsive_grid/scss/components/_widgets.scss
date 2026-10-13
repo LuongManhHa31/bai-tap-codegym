@@ -1,0 +1,35 @@
+// components/_widgets.scss
+
+// Các phần tử khối hiển thị bên trong cột (Menu items, Main block)
+.menu-item {
+  background-color: $item-bg;
+  border: none;
+  width: 100%;
+  height: 15%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.content-block {
+  background-color: $item-bg;
+  border: none;
+  width: 100%;
+  height: 92%;
+  border-radius: 4px;
+}
+
+.responsive-note {
+  margin-top: 420px;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.5;
+}

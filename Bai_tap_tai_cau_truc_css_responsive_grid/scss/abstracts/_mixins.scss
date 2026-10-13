@@ -1,0 +1,24 @@
+// abstracts/_mixins.scss
+
+// 1. Tính toán độ rộng cột (Column Span)
+@mixin col-span($cols) {
+  width: calc((#{$cols} / #{$grid-columns}) * 100%);
+  float: left;
+}
+
+// 2. Clearfix cho các phần tử float
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 3. Khung bao hàng (Row wrapper)
+@mixin row-wrapper($height) {
+  height: $height;
+  overflow: auto;
+  position: relative;
+  @include clearfix;
+}

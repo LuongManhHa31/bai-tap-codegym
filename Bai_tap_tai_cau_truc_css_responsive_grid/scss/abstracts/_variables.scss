@@ -1,0 +1,19 @@
+// abstracts/_variables.scss
+
+// 1. Hệ thống lưới (Grid system)
+$grid-columns: 12;
+$column-width: calc(100% / #{$grid-columns}); // 8.3333%
+
+// 2. Bảng màu giao diện
+$header-bg: #9933cc;
+$footer-bg: #0099cc;
+$item-bg: #33b5e5;
+$white: #ffffff;
+$grid-line-color: #808080;
+$guideline-color: #000000;
+
+// 3. Kích thước chiều cao các phần
+$header-height: 90px;
+$body-height: 230px;
+$footer-height: 50px;
+$guideline-height: 370px;
