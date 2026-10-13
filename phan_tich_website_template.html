@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Bài tập] Phân tích và Xây dựng Cấu Trúc Website Template</title>
+  <link rel="stylesheet" href="Bai_tap_phan_tich_xay_dung_website_template/style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER: CHỨA TIÊU ĐỀ TRANG VÀ THƯƠNG HIỆU -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a href="#" class="brand-title">Tech<span>News</span> Portal</a>
+        <p class="brand-tagline">Trang tin tức công nghệ và lập trình hiện đại</p>
+      </div>
+      <div>
+        <span style="font-size: 13px; background: #1e293b; padding: 6px 12px; border-radius: 6px; border: 1px solid #334155; color: #94a3b8;">
+          Website Template Analysis
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. NAVIGATION MENU: CÓ ÍT NHẤT 4 MỤC ĐIỀU HƯỚNG -->
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="#" class="active">Trang chủ</a></li>
+        <li><a href="#tech">Tin công nghệ</a></li>
+        <li><a href="#dev">Lập trình Web</a></li>
+        <li><a href="#tutorials">Hướng dẫn & Mẹo</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 3. CONTENT SECTION: GỒM ĐOẠN VĂN BẢN MÔ TẢ VÀ HÌNH ẢNH MINH HỌA -->
+  <main class="site-content">
+    <div class="container content-layout">
+      
+      <!-- Cột chính bên trái: Bài viết lớn + Lưới bài viết phụ -->
+      <section>
+        
+        <!-- Bài viết tiêu điểm (Hình ảnh + Văn bản) -->
+        <article class="featured-post">
+          <img 
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
+            alt="Lập trình Frontend hiện đại" 
+            class="featured-img"
+          >
+          <div class="featured-body">
+            <span class="category-badge">Tiêu điểm hôm nay</span>
+            <h1 class="post-title">Xu hướng phát triển Web Frontend trong kỷ nguyên mới</h1>
+            <p class="post-desc">
+              HTML5, CSS3 và các framework hiện đại như Bootstrap đang làm thay đổi căn bản cách các nhà phát triển xây dựng giao diện người dùng. Việc phân tích và nắm vững cấu trúc Website Template giúp tiết kiệm 50% thời gian thiết kế và tối ưu trải nghiệm tương tác.
+            </p>
+            <a href="#" style="color: #0284c7; font-weight: 600; text-decoration: none; font-size: 14.5px;">Đọc tiếp &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Lưới bài viết dạng card -->
+        <div class="posts-grid">
+          <!-- Card 1 -->
+          <article class="post-card">
+            <img 
+              src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" 
+              alt="Thiết kế Responsive" 
+              class="post-card-img"
+            >
+            <div class="post-card-body">
+              <h2 class="post-card-title">Thiết kế Responsive với Flexbox</h2>
+              <p class="post-card-desc">Căn chỉnh bố cục linh hoạt và thích ứng tức thời trên mọi kích cỡ màn hình.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="post-card">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" 
+              alt="Làm việc nhóm Git" 
+              class="post-card-img"
+            >
+            <div class="post-card-body">
+              <h2 class="post-card-title">Quản lý mã nguồn với GitHub</h2>
+              <p class="post-card-desc">Quy trình làm việc nhóm chuyên nghiệp, tạo pull request và kiểm soát phiên bản.</p>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+      <!-- Cột phụ bên phải: Sidebar -->
+      <aside>
+        
+        <!-- Widget 1: Giới thiệu cấu trúc Template -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">📌 Vai trò các thành phần</h3>
+          <ul class="widget-list">
+            <li><strong>Header:</strong> Định vị thương hiệu</li>
+            <li><strong>Navigation:</strong> Menu điều hướng</li>
+            <li><strong>Content:</strong> Nội dung chính &amp; bài viết</li>
+            <li><strong>Footer:</strong> Thông tin bản quyền &amp; pháp lý</li>
+          </ul>
+        </div>
+
+        <!-- Widget 2: Danh mục chủ đề -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">📚 Chuyên mục xem nhiều</h3>
+          <ul class="widget-list">
+            <li><a href="#"><span>HTML5 Semantic</span> <span>(15)</span></a></li>
+            <li><a href="#"><span>CSS Flexbox &amp; Grid</span> <span>(28)</span></a></li>
+            <li><a href="#"><span>Bootstrap 5</span> <span>(19)</span></a></li>
+            <li><a href="#"><span>JavaScript Core</span> <span>(34)</span></a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- 4. FOOTER: CHÂN TRANG CHỨA THÔNG TIN BẢN QUYỀN -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-copy">&copy; 2026 TechNews Portal. All rights reserved.</p>
+      <p class="footer-sub">Dự án bài tập Phân tích và Xây dựng Cấu trúc Website Template - CodeGym Frontend (Lương Mạnh Hà).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
