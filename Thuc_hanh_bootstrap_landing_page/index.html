@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Landing Page</title>
+  <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+      padding: 90px 20px;
+    }
+    .hero-section h1 {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .service-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BƯỚC 2.2: NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MyBrand</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BƯỚC 2.3: HERO SECTION -->
+  <header class="bg-primary text-white text-center py-5 hero-section">
+    <div class="container">
+      <h1 class="display-4 mb-3">Chào mừng đến với MyBrand</h1>
+      <p class="lead mb-4">Giải pháp số 1 cho doanh nghiệp của bạn</p>
+      <a href="#services" class="btn btn-light btn-lg px-4 shadow-sm fw-semibold">Khám phá ngay</a>
+    </div>
+  </header>
+
+  <!-- PHẦN ABOUT (GIỚI THIỆU) -->
+  <section id="about" class="container py-5 border-bottom">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2">Về chúng tôi</span>
+        <h2 class="fw-bold mb-3">Đồng hành phát triển cùng thương hiệu của bạn</h2>
+        <p class="text-muted leading-relaxed">
+          MyBrand cung cấp các giải pháp công nghệ toàn diện giúp doanh nghiệp xây dựng sự hiện diện trực tuyến mạnh mẽ, tối ưu hóa quy trình làm việc và gia tăng doanh số bền vững.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-4 bg-light rounded-3 border">
+          <h5 class="fw-bold text-dark mb-2">🚀 Cam kết chất lượng</h5>
+          <p class="text-secondary small mb-3">Đội ngũ chuyên gia giàu kinh nghiệm luôn nỗ lực mang lại giá trị cao nhất cho khách hàng.</p>
+          <div class="d-flex gap-3 text-center">
+            <div class="flex-fill bg-white p-2 rounded border">
+              <strong class="d-block fs-4 text-primary">500+</strong>
+              <small class="text-muted">Dự án</small>
+            </div>
+            <div class="flex-fill bg-white p-2 rounded border">
+              <strong class="d-block fs-4 text-primary">99%</strong>
+              <small class="text-muted">Hài lòng</small>
+            </div>
+            <div class="flex-fill bg-white p-2 rounded border">
+              <strong class="d-block fs-4 text-primary">24/7</strong>
+              <small class="text-muted">Hỗ trợ</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BƯỚC 2.4: GRID SYSTEM - SERVICES -->
+  <section id="services" class="container py-5">
+    <h2 class="text-center mb-2 fw-bold">Dịch vụ của chúng tôi</h2>
+    <p class="text-center text-muted mb-5">Mang đến các gói giải pháp số linh hoạt và hiệu quả nhất</p>
+    <div class="row g-4">
+      <div class="col-md-4 text-center">
+        <div class="card p-3 h-100 service-card">
+          <div class="card-body">
+            <div class="service-icon">💻</div>
+            <h3 class="h4 card-title fw-bold">Thiết kế Web</h3>
+            <p class="card-text text-muted">Dịch vụ thiết kế web chuyên nghiệp, chuẩn SEO, tương thích mọi thiết bị.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="card p-3 h-100 service-card">
+          <div class="card-body">
+            <div class="service-icon">📈</div>
+            <h3 class="h4 card-title fw-bold">SEO & Marketing</h3>
+            <p class="card-text text-muted">Nâng cao thương hiệu của bạn, tối ưu từ khóa và gia tăng lượng truy cập.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="card p-3 h-100 service-card">
+          <div class="card-body">
+            <div class="service-icon">🛠️</div>
+            <h3 class="h4 card-title fw-bold">Hỗ trợ 24/7</h3>
+            <p class="card-text text-muted">Chúng tôi luôn sẵn sàng hỗ trợ bạn bất kỳ thời điểm nào trong tuần.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION LIÊN HỆ -->
+  <section id="contact" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">Sẵn sàng khởi động dự án?</h2>
+      <p class="text-muted mb-4">Hãy để lại thông tin hoặc liên hệ với chúng tôi để nhận tư vấn miễn phí.</p>
+      <a href="mailto:contact@mybrand.com" class="btn btn-primary px-4 py-2">Liên hệ với MyBrand</a>
+    </div>
+  </section>
+
+  <!-- BƯỚC 2.5: FOOTER -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2026 MyBrand. All rights reserved.</p>
+  </footer>
+
+  <!-- Nhúng Bootstrap 5.3.0 JS Bundle từ CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
